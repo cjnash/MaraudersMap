@@ -1,6 +1,11 @@
 MaraudersMap::Application.routes.draw do
-  resources :users
+  resources :pages
 
+  resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  root :to => "pages#index"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
