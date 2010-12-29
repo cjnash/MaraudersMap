@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
+  
   def index
     @pages = Page.all
 
@@ -25,6 +26,7 @@ class PagesController < ApplicationController
   # GET /pages/new.xml
   def new
     @page = Page.new
+    @user = current_user
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +37,7 @@ class PagesController < ApplicationController
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    @user = current_user
   end
 
   # POST /pages

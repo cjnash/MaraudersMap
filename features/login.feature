@@ -32,5 +32,3 @@ Scenario: Wrong username
   And I fill in "session_password" with "abcdefg"
   And I press "session_submit"
   Then I should see "Your magic words were wrong. Try again."
-  
-Scenario

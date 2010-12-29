@@ -1,5 +1,56 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @page.headline %></h1>
+
+<p>
+  <b>CMS Page ID #:</b>
+  <%= @page.cms_page_id %>
+</p>
+
+<p>
+  <b>Site Section:</b>
+  <%= @page.section %>
+</p>
+
+<p>
+  <b>Navigation Path:</b>
+  <%= @page.path %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= link_to @page.url, @page.url %>
+</p>
+<hr>
+<p>
+Created by:
+  <%= @page.created_by %>
+</p>
+
+<p>
+Created on:
+  <%= @page.created_at%>
+</p>
+
+<p>
+Last updated by:
+  <%= @page.updated_by %>
+</p>
+
+<p>
+Last updated on:
+  <%= @page.updated_at %>
+</p>
+
+<p>
+Last reviewed by:
+  <%= @page.reviewed_by %>
+  </p>
+  
+<p>
+Last reviewed on:
+  <%= @page.reviewed_date %>
+</p>
 
 <%= link_to 'Edit', edit_page_path(@page) %> |
 <%= link_to 'Back', pages_path %>

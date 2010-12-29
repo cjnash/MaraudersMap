@@ -10,6 +10,30 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :headline %><br />
+    <%= f.text_field :headline %>
+  </div>
+  <div class="field">
+    <%= f.label :cms_page_id %><br />
+    <%= f.text_field :cms_page_id %>
+  </div>
+  <div class="field">
+    <%= f.label :section %><br />
+    <%= f.text_field :section %>
+  </div>
+  <div class="field">
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
+  <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
+  <%= f.hidden_field :updated_by, :value => @user.username, :only => :edit %>
+  
 
   <div class="actions">
     <%= f.submit %>
