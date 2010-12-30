@@ -79,7 +79,7 @@ class PagesController < ApplicationController
     @page.destroy
 
     respond_to do |format|
-      format.html { redirect_to(pages_url) }
+      format.html { redirect_to(pages_url, :notice => 'The page has vanished.') }
       format.xml  { head :ok }
     end
   end

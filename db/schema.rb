@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101229161019) do
+ActiveRecord::Schema.define(:version => 20101229195216) do
 
   create_table "pages", :force => true do |t|
     t.datetime "created_at"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20101229161019) do
     t.string   "updated_by"
     t.string   "reviewed_by"
     t.datetime "reviewed_date"
+    t.string   "status"
   end
 
   create_table "users", :force => true do |t|
