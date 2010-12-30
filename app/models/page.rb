@@ -7,9 +7,18 @@ class Page < ActiveRecord::Base
   validates :status, :presence => true
   validates :section, :presence => true
   validates :path, :presence => true
+
+  def self.live
+    self.where(:status => "Live!")
+  end
+    
+  def self.offline
+    self.where(:status => "Offline")
+  end
   
-  STATUS = ["Live!", "Offline"]
-  SECTIONS = ["Membership", "Travel", "Auto", "Registries", "Insurance", "Driver Ed", "Financial**", "AMA & Community", "Other"]
-  USERS = ["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Krista", "Jason", "Johnn", "RuthAnn", "Sarah vT", "Other"]
+  # Haven't figured out how to use this kind of filtering yet for dropdowns, so I've kept this here but commented it out. The selects are done in the view.
+ # STATUS = ["Live!", "Offline"]
+ # SECTIONS = ["Membership", "Travel", "Auto", "Registries", "Insurance", "Driver Ed", "Financial**", "AMA & Community", "Other"]
+ # USERS = ["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Krista", "Jason", "Johnn", "RuthAnn", "Sarah vT", "Other"]
   
 end

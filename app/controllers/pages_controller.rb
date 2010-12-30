@@ -3,8 +3,10 @@ class PagesController < ApplicationController
   # GET /pages.xml
   
   def index
-    @pages = Page.all
+    @pages = Page.live.all
+    @archive_pages = Page.offline.all
     @user = current_user
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
@@ -16,6 +18,7 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
     @user = current_user
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @page }
