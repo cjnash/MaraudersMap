@@ -1,5 +1,7 @@
 MaraudersMap::Application.routes.draw do
-  resources :pages
+  resources :pages do
+    resources :notes
+  end
 
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]

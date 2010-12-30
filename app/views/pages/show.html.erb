@@ -52,5 +52,23 @@ Last reviewed on:
   <%= @page.reviewed_date %>
 </p>
 
+<h2>Add a note:</h2>
+<%= form_for([@page, @page.notes.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body %>
+  </div>
+  <%= f.hidden_field :commenter, :value => @user.username %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<h2>Past notes</h2>
+<% @page.notes.each do |note| %>
+<p>
+  <%= note.created_at %> - From <%= note.commenter %> : </br> 
+  <%= note.body %>
+<% end %>
+<hr>
 <%= link_to 'Edit this Page', edit_page_path(@page) %> |
 <%= link_to 'Back to Index', pages_path %>

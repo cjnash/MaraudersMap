@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101229195216) do
+ActiveRecord::Schema.define(:version => 20101230151755) do
+
+  create_table "notes", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", :force => true do |t|
     t.datetime "created_at"
