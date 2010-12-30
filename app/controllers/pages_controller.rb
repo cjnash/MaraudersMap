@@ -3,8 +3,14 @@ class PagesController < ApplicationController
   # GET /pages.xml
   
   def index
-    @pages = Page.live.all
-    @archive_pages = Page.offline.all
+    if params[:status] == "offline"
+      @pages = Page.offline.all
+    elsif params[:status] == "live!"
+      @pages = Page.live.all
+    else
+      @pages = Page.all
+    end
+    
     @user = current_user
     
     respond_to do |format|
