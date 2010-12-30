@@ -12,38 +12,27 @@
   <% end %>
   
   <div class="field">
-    <%= f.label :headline %><br />
-    <%= f.text_field :headline, :size => 50 %>
+    <%= f.label :headline %><%= f.text_field :headline, :size => 50 %>
   </div>
   <div class="field">
-    <%= f.label :cms_page_id %><br />
-    <%= f.text_field :cms_page_id, :size => 6 %>
+    <%= f.label :cms_page_id, "CMS Page ID #" %><%= f.text_field :cms_page_id, :size => 6 %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
+    <%= f.label :status %><%= f.select :status, options_for_select(["Live!", "Offline"])%>
   </div>
   <div class="field">
-    <%= f.label :section %><br />
-    <%= f.text_field :section, :size => 20 %>
+    <%= f.label :section %><%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]) %><br />
   </div>
   <div class="field">
-    <%= f.label :path %><br />
-    <%= f.text_field :path, :size => 35 %>
+    <%= f.label :path %><%= f.text_field :path, :size => 35 %>
   </div>
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url, :size => 75 %>
+    <%= f.label :url %><%= f.text_field :url, :size => 75 %>
   </div>
   <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
   <%= f.hidden_field :updated_by, :value => @user.username, :only => :edit %>
   <div class="field">
-    <%= f.label :reviewed_by %><br />
-    <%= f.text_field :reviewed_by %>
-  </div>
-  <div class="field">
-    <%= f.label :reviewed_date %><br />
-    <%= f.text_field :reviewed_date %>
+    <%= f.label :reviewed_by %><%= f.text_field :reviewed_by %> on <%= f.text_field :reviewed_date, :only => :show %>
   </div>
 
   <div class="actions">

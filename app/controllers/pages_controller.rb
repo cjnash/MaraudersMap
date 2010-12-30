@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   
   def index
     @pages = Page.all
-
+    @user = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
@@ -44,7 +44,7 @@ class PagesController < ApplicationController
   # POST /pages.xml
   def create
     @page = Page.new(params[:page])
-
+    @user = current_user
     respond_to do |format|
       if @page.save
         format.html { redirect_to(@page, :notice => 'Page was successfully created.') }
