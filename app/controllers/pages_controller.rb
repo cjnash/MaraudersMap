@@ -4,11 +4,11 @@ class PagesController < ApplicationController
   
   def index
     if params[:status] == "offline"
-      @pages = Page.offline.all
+      @pages = Page.offline.all(:order => 'headline')
     elsif params[:status] == "live!"
-      @pages = Page.live.all
+      @pages = Page.live.all(:order => 'headline')
     else
-      @pages = Page.all
+      @pages = Page.all(:order => 'headline')
     end
     
     @user = current_user

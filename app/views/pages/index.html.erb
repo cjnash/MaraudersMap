@@ -1,10 +1,6 @@
-<h1>AMA Website Content Pages</h1>
-<p>
-<%= link_to 'List live pages', pages_path(:status => "live!") %> | 
-<%= link_to 'List offline pages', pages_path(:status => "offline") %> | 
-<%= link_to 'Show everything', pages_path %>
-</p>
-
+<div id="mainbody">
+  <h1>AMA Website Content Pages</h1>
+  
 <table>  
   <tr>  
     <th></th>  
@@ -18,7 +14,15 @@
   </tr>
 <% end %>
 </table>
+</div>
 
-<br />
-<hr>
-<%= link_to 'Create a New Page', new_page_path %>
+<div id="sidebar">
+  <p>
+  <%= link_to 'Create a New Page', new_page_path %></p>
+  <p>
+  <%= link_to 'List live pages', pages_path(:status => "live!") %> </p>
+  <p>
+  <%= link_to 'List offline pages', pages_path(:status => "offline") %> </p>
+  <p>
+  <%= link_to 'Show everything', pages_path %></p>
+</div>

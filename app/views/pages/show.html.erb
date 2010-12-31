@@ -1,5 +1,8 @@
+<div id="pageinfoheadline">
 <h1><%= @page.headline %></h1>
+</div>
 
+<div id="pageinfo">
 <p>
   <b>CMS Page ID #:</b>
   <%= @page.cms_page_id %>
@@ -24,41 +27,24 @@
   <b>Link:</b>
   <%= link_to @page.url, @page.url %>
 </p>
-<hr>
 <p>
-Created by:
-  <%= @page.created_by %>
+Created by <%= @page.created_by %> on   <%= @page.created_at%>
 </p>
 
 <p>
-Created on:
-  <%= @page.created_at%>
+Last updated by <%= @page.updated_by %> on   <%= @page.updated_at %>
 </p>
 
 <p>
-Last updated by:
-  <%= @page.updated_by %>
-</p>
-
-<p>
-Last updated on:
-  <%= @page.updated_at %>
-</p>
-
-<p>
-Last reviewed by:
-  <%= @page.reviewed_by %>
+Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %>
   </p>
-  
-<p>
-Last reviewed on:
-  <%= @page.reviewed_date %>
-</p>
+</div>
 
-<h2>Add a note:</h2>
+<div id="notes">
+<h3>Add a Note:</h3>
 <%= form_for([@page, @page.notes.build]) do |f| %>
   <div class="field">
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :size => "50x10" %>
   </div>
   <%= f.hidden_field :commenter, :value => @user.username %>
   <div class="actions">
@@ -66,9 +52,11 @@ Last reviewed on:
   </div>
 <% end %>
 
-<h2>Past notes</h2>
+<h3>Past notes</h3>
 <%= render  :partial => "notes/note",
             :collection => @page.notes %>
-<hr>
+</div>
+<div id="footer">
 <%= link_to 'Edit this Page', edit_page_path(@page) %> |
 <%= link_to 'Back to Index', pages_path %>
+</div>
