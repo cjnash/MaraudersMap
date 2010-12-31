@@ -4,11 +4,11 @@ class PagesController < ApplicationController
   
   def index
     if params[:status] == "offline"
-      @pages = Page.offline.all(:order => 'headline')
+      @pages = Page.offline.all(:order => 'headline ASC')
     elsif params[:status] == "live!"
-      @pages = Page.live.all(:order => 'headline')
+      @pages = Page.live.all(:order => 'headline ASC')
     else
-      @pages = Page.all(:order => 'headline')
+      @pages = Page.all(:order => 'headline ASC')
     end
     
     @user = current_user
@@ -69,7 +69,7 @@ class PagesController < ApplicationController
   # PUT /pages/1.xml
   def update
     @page = Page.find(params[:id])
-
+    @user = current_user
     respond_to do |format|
       if @page.update_attributes(params[:page])
         format.html { redirect_to(@page, :notice => 'Page was successfully updated.') }

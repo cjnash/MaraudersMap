@@ -7,6 +7,9 @@ class Page < ActiveRecord::Base
   validates :status, :presence => true
   validates :section, :presence => true
   validates :path, :presence => true
+  validates :url, :presence => true
+  validates :reviewed_by, :presence => true
+  validates :reviewed_date, :presence => true
 
   def self.live
     self.where(:status => "Live!")

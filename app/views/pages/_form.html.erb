@@ -12,27 +12,39 @@
   <% end %>
   
   <div class="field">
-    <%= f.label :headline %><%= f.text_field :headline, :size => 50 %>
+    <%= f.label :headline %>
+    <%= f.text_field :headline, :size => 75 %>
   </div>
+    
   <div class="field">
-    <%= f.label :cms_page_id, "CMS Page ID #" %><%= f.text_field :cms_page_id, :size => 6 %>
+    <%= f.label :cms_page_id, "CMS Page ID #" %>
+    <%= f.text_field :cms_page_id, :size => 6 %>
   </div>
+
   <div class="field">
-    <%= f.label :status %><%= f.select :status, options_for_select(["Live!", "Offline"])%>
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select(["Live!", "Offline"]), {:include_blank => true, :default => nil} %>
   </div>
+  
   <div class="field">
-    <%= f.label :section %><%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]) %><br />
+    <%= f.label :section %><%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]), {:include_blank => true, :default => nil} %>
   </div>
+  
   <div class="field">
     <%= f.label :path %><%= f.text_field :path, :size => 35 %>
   </div>
+  
   <div class="field">
-    <%= f.label :url %><%= f.text_field :url, :size => 75 %>
+    <%= f.label :url %><%= f.text_field :url, :size => 100 %>
   </div>
+  
   <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
   <%= f.hidden_field :updated_by, :value => @user.username, :only => :edit %>
+  
   <div class="field">
-    <%= f.label :reviewed_by %><%= f.text_field :reviewed_by %> on <%= f.text_field :reviewed_date, :only => :show %>
+    <%= f.label :reviewed_by %>
+    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Krista", "Jason", "Johnn", "RuthAnn", "Sarah vT", "Other"]), {:include_blank => true, :default => nil} %> on 
+    <%= f.datetime_select :reviewed_date %>
   </div>
 
   <div class="actions">

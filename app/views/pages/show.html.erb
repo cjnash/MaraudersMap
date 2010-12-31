@@ -9,8 +9,7 @@
 </p>
 
 <p>
-  <b>Current Status:</b>
-  <%= @page.status %>
+  <b>Current Status:</b><%= @page.status %>
   </p>
 
 <p>
@@ -27,12 +26,13 @@
   <b>Link:</b>
   <%= link_to @page.url, @page.url %>
 </p>
+
 <p>
-Created by <%= @page.created_by %> on   <%= @page.created_at%>
+Created by <%= @page.created_by %> on   <%= @page.created_at.to_s(:short) %>
 </p>
 
 <p>
-Last updated by <%= @page.updated_by %> on   <%= @page.updated_at %>
+Last updated by <%= @page.updated_by %> on   <%= @page.updated_at.to_s(:short) %>
 </p>
 
 <p>
@@ -52,10 +52,11 @@ Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %>
   </div>
 <% end %>
 
-<h3>Past notes</h3>
+<b>Past notes</b>
 <%= render  :partial => "notes/note",
-            :collection => @page.notes %>
+            :collection => @page.notes, :order => "created_at DESC" %>
 </div>
+
 <div id="footer">
 <%= link_to 'Edit this Page', edit_page_path(@page) %> |
 <%= link_to 'Back to Index', pages_path %>

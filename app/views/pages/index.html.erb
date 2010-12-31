@@ -1,5 +1,10 @@
-<div id="mainbody">
+<div id="pageinfoheadline">
   <h1>AMA Website Content Pages</h1>
+</div>
+  
+<div id="mainbody">
+  <p>
+  <%= link_to 'List live pages', pages_path(:status => "live!") %> |  <%= link_to 'List offline pages', pages_path(:status => "offline") %> | <%= link_to 'Show everything', pages_path %></p>
   
 <table>  
   <tr>  
@@ -19,10 +24,5 @@
 <div id="sidebar">
   <p>
   <%= link_to 'Create a New Page', new_page_path %></p>
-  <p>
-  <%= link_to 'List live pages', pages_path(:status => "live!") %> </p>
-  <p>
-  <%= link_to 'List offline pages', pages_path(:status => "offline") %> </p>
-  <p>
-  <%= link_to 'Show everything', pages_path %></p>
+
 </div>
