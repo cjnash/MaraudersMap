@@ -1,15 +1,20 @@
-<h1>List of Content Pages</h1>
+<h1>AMA Website Content Pages</h1>
+<p>
+<%= link_to 'List live pages', pages_path(:status => "live!") %> | 
+<%= link_to 'List offline pages', pages_path(:status => "offline") %> | 
+<%= link_to 'Show everything', pages_path %>
+</p>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+<table>  
+  <tr>  
+    <th></th>  
+    <th></th>  
+    <th></th>  
   </tr>
-
+<br>
 <% @pages.each do |page| %>
   <tr>
-    <td><%= link_to page.headline, page %>
+    <td><%= link_to page.headline, page %></td>
   </tr>
 <% end %>
 </table>
