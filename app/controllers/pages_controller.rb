@@ -7,6 +7,26 @@ class PagesController < ApplicationController
       @pages = Page.offline.all(:order => 'headline ASC')
     elsif params[:status] == "live!"
       @pages = Page.live.all(:order => 'headline ASC')
+    elsif params[:section] == "Membership"
+      @pages = Page.membership.all(:order => 'headline ASC')
+    elsif params[:section] == "Travel"
+      @pages = Page.travel.all(:order => 'headline ASC')
+    elsif params[:section] == "Auto"
+      @pages = Page.auto.all(:order => 'headline ASC')
+    elsif params[:section] == "Registries"
+      @pages = Page.registries.all(:order => 'headline ASC')
+    elsif params[:section] == "Insurance"
+      @pages = Page.insurance.all(:order => 'headline ASC')
+    elsif params[:section] == "Deals"
+      @pages = Page.deals.all(:order => 'headline ASC')
+    elsif params[:section] == "Driver Ed"
+      @pages = Page.drivered.all(:order => 'headline ASC')
+    elsif params[:section] == "Financial*"
+      @pages = Page.financial.all(:order => 'headline ASC')
+    elsif params[:section] == "Community & AMA"
+      @pages = Page.communityandama.all(:order => 'headline ASC')
+    elsif params[:section] == "Other"
+      @pages = Page.other.all(:order => 'headline ASC')
     else
       @pages = Page.all(:order => 'headline ASC')
     end
