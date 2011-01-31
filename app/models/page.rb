@@ -10,6 +10,9 @@ class Page < ActiveRecord::Base
   validates :url, :presence => true
   validates :reviewed_by, :presence => true
   validates :reviewed_date, :presence => true
+  validates :user_state, :presence => true
+  validates :template, :presence => true
+  validates :next_review_date, :presence => true
 
   def self.live
     self.where(:status => "Live!")
@@ -59,6 +62,13 @@ class Page < ActiveRecord::Base
     self.where(:section => "Other")
   end
   
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['headline LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
   
   # Haven't figured out how to use this kind of filtering yet for dropdowns, so I've kept this here but commented it out. The selects are done in the view.
  # STATUS = ["Live!", "Offline"]

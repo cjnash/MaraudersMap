@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!
   
   def index
+    
     if params[:status] == "offline"
       @pages = Page.offline.all(:order => 'headline ASC')
     elsif params[:status] == "live!"
@@ -30,8 +31,10 @@ class PagesController < ApplicationController
     elsif params[:section] == "Other"
       @pages = Page.other.all(:order => 'headline ASC')
     else
-      @pages = Page.all(:order => 'headline ASC')
+      @pages = Page.search(params[:search])
     end
+    
+    
     
     @user = current_user
     

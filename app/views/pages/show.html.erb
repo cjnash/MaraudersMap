@@ -28,6 +28,21 @@
 </p>
 
 <p>
+  <b>Deep Link:</b>
+  <%= @page.deep_link %>
+</p>
+
+<p>
+  <b>Page User State:</b>
+  <%= @page.user_state %>
+</p>
+
+<p>
+  <b>Template:</b>
+  <%= @page.template %>
+</p>
+
+<p>
 Created by <%= @page.created_by %> on   <%= @page.created_at.to_s(:short) %>
 </p>
 
@@ -38,6 +53,12 @@ Last updated by <%= @page.updated_by %> on   <%= @page.updated_at.to_s(:short) %
 <p>
 Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %>
   </p>
+
+<p>
+  Next review date:
+  <%= @page.next_review_date %>
+</p>
+
 </div>
 
 <div id="notes">

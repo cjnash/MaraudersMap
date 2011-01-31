@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101230151755) do
+ActiveRecord::Schema.define(:version => 20110131150424) do
 
   create_table "notes", :force => true do |t|
     t.string   "commenter"
@@ -21,18 +21,22 @@ ActiveRecord::Schema.define(:version => 20101230151755) do
   end
 
   create_table "pages", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "headline"
-    t.integer  "cms_page_id"
-    t.string   "section"
-    t.string   "path"
-    t.string   "url"
-    t.string   "created_by"
-    t.string   "updated_by"
-    t.string   "reviewed_by"
-    t.datetime "reviewed_date"
-    t.string   "status"
+    t.date    "created_at"
+    t.date    "updated_at"
+    t.string  "headline"
+    t.integer "cms_page_id"
+    t.string  "section"
+    t.string  "path"
+    t.string  "url"
+    t.string  "created_by"
+    t.string  "updated_by"
+    t.string  "reviewed_by"
+    t.date    "reviewed_date"
+    t.string  "status"
+    t.string  "deep_link"
+    t.string  "user_state"
+    t.string  "template"
+    t.date    "next_review_date"
   end
 
   create_table "users", :force => true do |t|
