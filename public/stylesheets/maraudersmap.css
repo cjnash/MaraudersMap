@@ -1,9 +1,9 @@
-body { background-color: #eecc00; color: #333; }
+body { background-color: #daaf5a; color: #333; }
 
 h1 {
   font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino;
   font-size: 24px;
-  font-color: #eeddee;
+  font-color: #251a01;
 }
 
 body, p, ol, ul, td {
@@ -19,15 +19,15 @@ pre {
   font-size: 11px;
 }
 
-a { color: #444444; }
-a:visited { color: #444444; }
+a { color: #251a01; }
+a:visited { color: #251a01; }
 a:hover { color: #fff; background-color:#332200; }
 
 div.field, label, div.actions {
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
   font-size:   15px;
   line-height: 25px;
-  font-color: #000;
+  font-color: #251a01;
   margin-bottom: 10px;
   margin-top: 20px;
   margin-right: 1em;
@@ -38,14 +38,14 @@ div.field, label, div.actions {
 }
 
 #banner h1 {
-  background-color: #332200;
+  background-color: #251a01;
   width: 100%;
   height: 100%;
-  padding-top: 20px;
+  padding-top: 22px;
   padding-bottom: 16px;
   font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino;
-  color: #eecc00;	
-  font-size: 36px;
+  color: #daaf5a;	
+  font-size: 46px;
   text-align: center;
 }
 
@@ -58,7 +58,7 @@ div.field, label, div.actions {
 
 #pageinfoheadline h1 {
   float:left;
-  color: #332200;
+  color: #251a01;
   margin-left: 10px;
   padding-top: 0px;
   padding-bottom: 10px;
@@ -67,7 +67,7 @@ div.field, label, div.actions {
 
 #notes {
   float: right;
-  margin-right: 50px;
+  margin-right: 70px;
   margin-top: -5px;
 }
 

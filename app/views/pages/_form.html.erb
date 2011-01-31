@@ -27,31 +27,33 @@
   </div>
   
   <div class="field">
-    <%= f.label :section %>
+    <%= f.label "Available to" %>
+    <%= f.select :user_state, options_for_select(["Public", "Logged In", "Member Only"]), {:include_blank => true, :default => nil} %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Site section" %>
     <%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]), {:include_blank => true, :default => nil} %>
   </div>
   
   <div class="field">
-    <%= f.label :path %><%= f.text_field :path, :size => 35 %>
+    <%= f.label :path, "Navigation path" %><%= f.text_field :path, :size => 35 %>
   </div>
   
   <div class="field">
-    <%= f.label :url %><%= f.text_field :url, :size => 100 %>
+    <%= f.label :url, "URL" %><%= f.text_field :url, :size => 100 %>
   </div>
   
   <div class="field">
-    <%= f.label :deep_link %><%= f.text_field :deep_link, :size => 100 %>
+    <%= f.label :deep_link, "Deeplink(s)" %><%= f.text_field :deep_link, :size => 100 %>
   </div>
   
   <div class="field">
-    <%= f.label :template %>
+    <%= f.label :template, "CMS template" %>
     <%= f.select :template, options_for_select(["Grid", "Tab/Multistep", "Form", "Landing Page", "Other"]), {:include_blank => true, :default => nil} %>
   </div>
   
-  <div class="field">
-    <%= f.label :user_state %>
-    <%= f.select :user_state, options_for_select(["Public", "Logged In", "Member Only"]), {:include_blank => true, :default => nil} %>
-  </div>
+
   
   <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
   <%= f.hidden_field :updated_by, :value => @user.username, :only => :edit %>

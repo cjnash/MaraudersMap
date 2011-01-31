@@ -3,76 +3,69 @@
 </div>
 
 <div id="pageinfo">
+  <h2>Vital Stats</h2>
 <p>
-  <b>CMS Page ID #:</b>
+  <b>CMS page ID #:</b>
   <%= @page.cms_page_id %>
 </p>
 
 <p>
-  <b>Current Status:</b><%= @page.status %>
+  <b>Current status: </b><%= @page.status %>
   </p>
-
+  
 <p>
-  <b>Site Section:</b>
-  <%= @page.section %>
-</p>
-
-<p>
-  <b>Navigation Path:</b>
-  <%= @page.path %>
-</p>
-
-<p>
-  <b>Link:</b>
-  <%= link_to @page.url, @page.url %>
-</p>
-
-<p>
-  <b>Deep Link:</b>
-  <%= @page.deep_link %>
-</p>
-
-<p>
-  <b>Page User State:</b>
+  <b>Available to:</b>
   <%= @page.user_state %>
 </p>
 
 <p>
-  <b>Template:</b>
+  <b>Site section:</b>
+  <%= @page.section %>
+</p>
+
+<p>
+  <b>Navigation path:</b>
+  <%= @page.path %>
+</p>
+
+<p>
+  <b>Permanent link:</b>
+  <%= link_to @page.url, @page.url %>
+</p>
+
+<p>
+  <b>Deeplink(s):</b>
+  <%= @page.deep_link %>
+</p>
+
+<p>
+  <b>CMS template:</b>
   <%= @page.template %>
-</p>
+</p><br>
+
+<h3>Update History</h3>
 
 <p>
-Created by <%= @page.created_by %> on   <%= @page.created_at.to_s(:short) %>
-</p>
-
-<p>
-Last updated by <%= @page.updated_by %> on   <%= @page.updated_at.to_s(:short) %>
-</p>
-
-<p>
-Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %>
-  </p>
-
-<p>
-  Next review date:
-  <%= @page.next_review_date %>
+Created by <%= @page.created_by %> on   <%= @page.created_at.to_s(:short) %><br>
+Last updated by <%= @page.updated_by %> on   <%= @page.updated_at.to_s(:short) %><br>
+Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %><br>
+Next review date: <%= @page.next_review_date %>
 </p>
 
 </div>
 
 <div id="notes">
-<h3>Add a Note:</h3>
+<h2>Notebook</h2>
 <%= form_for([@page, @page.notes.build]) do |f| %>
   <div class="field">
     <%= f.text_area :body, :size => "50x10" %>
   </div>
   <%= f.hidden_field :commenter, :value => @user.username %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Add note' %>
   </div>
 <% end %>
-
+<br>
 <b>Past notes</b>
 <%= render  :partial => "notes/note",
             :collection => @page.notes, :order => "created_at DESC" %>
