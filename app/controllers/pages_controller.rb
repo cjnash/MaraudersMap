@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.xml
   
+  before_filter :authenticate_user!
+  
   def index
     if params[:status] == "offline"
       @pages = Page.offline.all(:order => 'headline ASC')
