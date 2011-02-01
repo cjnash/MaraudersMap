@@ -34,8 +34,6 @@ class PagesController < ApplicationController
       @pages = Page.search(params[:search])
     end
     
-    
-    
     @user = current_user
     
     respond_to do |format|

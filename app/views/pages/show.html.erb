@@ -44,10 +44,9 @@
 </p><br>
 
 <h3>Update History</h3>
-
 <p>
-Created by <%= @page.created_by %> on   <%= @page.created_at.to_s(:short) %><br>
-Last updated by <%= @page.updated_by %> on   <%= @page.updated_at.to_s(:short) %><br>
+Created by <%= @page.created_by %> on   <%= @page.created_at %><br>
+Last updated by <%= @page.updated_by %> on   <%= @page.updated_at %><br>
 Last reviewed by <%= @page.reviewed_by %> on   <%= @page.reviewed_date %><br>
 Next review date: <%= @page.next_review_date %>
 </p>

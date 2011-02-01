@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
   has_many :notes
   
   validates :headline, :presence => true
-  validates :cms_page_id, :presence => true
+  validates :cms_page_id, :presence => true, :uniqueness => true
   validates :status, :presence => true
   validates :section, :presence => true
   validates :path, :presence => true
@@ -64,7 +64,7 @@ class Page < ActiveRecord::Base
   
   def self.search(search)
     if search
-      find(:all, :conditions => ['headline LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['cms_page_id LIKE ?', "%#{search}%"])
     else
       find(:all)
     end

@@ -11,3 +11,4 @@ class ChangeDatetimesToDates < ActiveRecord::Migration
     change_column :pages, :updated_at, :datetime
   end
 end
+s

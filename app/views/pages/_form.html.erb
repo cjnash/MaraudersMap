@@ -23,17 +23,17 @@
 
   <div class="field">
     <%= f.label :status %>
-    <%= f.select :status, options_for_select(["Live!", "Offline"]), {:include_blank => true, :default => nil} %>
+    <%= f.select :status, options_for_select(["Live!", "Offline"]) %>
   </div>
   
   <div class="field">
     <%= f.label "Available to" %>
-    <%= f.select :user_state, options_for_select(["Public", "Logged In", "Member Only"]), {:include_blank => true, :default => nil} %>
+    <%= f.select :user_state, options_for_select(["Public", "Logged In User", "Member Only"]) %>
   </div>
   
   <div class="field">
     <%= f.label "Site section" %>
-    <%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]), {:include_blank => true, :default => nil} %>
+    <%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]) %>
   </div>
   
   <div class="field">
@@ -49,18 +49,16 @@
   </div>
   
   <div class="field">
-    <%= f.label :template, "CMS template" %>
-    <%= f.select :template, options_for_select(["Grid", "Tab/Multistep", "Form", "Landing Page", "Other"]), {:include_blank => true, :default => nil} %>
+    <%= f.label :template, "Page template" %>
+    <%= f.select :template, options_for_select(["Grid", "Tab/Multistep", "Form", "Landing Page", "Other"]) %>
   </div>
-  
-
   
   <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
   <%= f.hidden_field :updated_by, :value => @user.username, :only => :edit %>
   
   <div class="field">
     <%= f.label :reviewed_by %>
-    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Krista", "Jason", "Johnn", "RuthAnn", "Sarah vT", "Other"]), {:include_blank => true, :default => nil} %> on 
+    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Laura", "Jason", "Johnn", "Krista", "RuthAnn", "Sarah vT", "Other"]) %> on 
     <%= f.date_select :reviewed_date %>
   </div>
   

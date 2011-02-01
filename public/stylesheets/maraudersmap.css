@@ -6,6 +6,13 @@ h1 {
   font-color: #251a01;
 }
 
+h2 {
+  font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+  font-size: 18px;
+  font-color: #251a01;
+  text-shadow:#777777 1px 1px 1px;
+}
+
 body, p, ol, ul, td {
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
   font-size:   12px;
@@ -25,7 +32,7 @@ a:hover { color: #fff; background-color:#332200; }
 
 div.field, label, div.actions {
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-  font-size:   15px;
+  font-size:   14px;
   line-height: 25px;
   font-color: #251a01;
   margin-bottom: 10px;
@@ -91,14 +98,17 @@ div.field, label, div.actions {
 }
 
 #sidebar p {
+  clear: top;
   float: right;
   margin-right: 1px;
-  margin-top: 10px;
+  margin-left: 25px;
+  margin-top: 5px;
   padding: 1em;
   width: 20em;
   font-size: 16px;
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
-  line-height: 15px;
+  line-height: 5px;
+  background-color: #ffd273;
 }
 
 .field_with_errors {
