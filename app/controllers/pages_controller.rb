@@ -35,6 +35,7 @@ class PagesController < ApplicationController
     end
     
     @user = current_user
+    @counter = Page.count(params[:status] == "Live!")
     
     respond_to do |format|
       format.html # index.html.erb

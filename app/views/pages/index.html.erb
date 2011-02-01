@@ -6,7 +6,7 @@
   <h3>List 
   <%= link_to 'live pages', pages_path(:status => "live!") %>, <%= link_to 'offline pages', pages_path(:status => "offline") %>, or just <%= link_to 'show me everything', pages_path %></h3>
   <p>
-  (Or show me only 
+  (Or only 
     <%= link_to 'Membership', pages_path(:section => "Membership") %> | <%= link_to 'Travel', pages_path(:section => "Travel") %> | <%= link_to 'Auto', pages_path(:section => "Auto") %> | <%= link_to 'Registries', pages_path(:section => "Registries") %> | <%= link_to 'Insurance', pages_path(:section => "Insurance") %> | <%= link_to 'Deals', pages_path(:section => "Deals") %> | <%= link_to 'Driver Ed', pages_path(:section => "Driver Ed") %> | <%= link_to 'Financial*', pages_path(:section => "Financial*") %> | <%= link_to 'Community & AMA', pages_path(:section => "Community & AMA") %> | or <%= link_to 'Other', pages_path(:section => "Other") %>)</p>
     <hr>
 <table>  
@@ -28,4 +28,6 @@
   <p>
   <%= link_to '+ Create a New Page Listing', new_page_path %></p>
   <%= render :partial => "pages/search" %>
+  <p>
+    Live page count: <b><%= @counter %></b></p>
 </div>
