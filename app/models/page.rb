@@ -62,9 +62,53 @@ class Page < ActiveRecord::Base
     self.where(:section => "Other")
   end
   
+  def self.christopher
+    self.where(:created_by => "Christopher.Nash")
+  end
+  
+  def self.amanda
+    self.where(:created_by => "Amanda.Doucette")
+  end
+  
+  def self.laura
+    self.where(:created_by => "Laura.Urbanowski")
+  end
+  
+  def self.krista
+    self.where(:created_by => "Krista.Vieira")
+  end
+  
+  def self.jason
+    self.where(:created_by => "Jason.Buzzell")
+  end
+  
+  def self.johnn
+    self.where(:created_by => "Johnn.Four")
+  end
+  
+  def self.darrell
+    self.where(:created_by => "Darrell.Winwood")
+  end
+  
+  def self.ruthann
+    self.where(:created_by => "RuthAnn.Raycroft")
+  end
+  
+  def self.dwain
+    self.where(:created_by => "Dwain.SagerWilson")
+  end
+  
+  def self.esci
+    self.where(:created_by => "Esci.Cagaoan")
+  end
+  
+  def self.sarahvt
+    self.where(:created_by => "Sarah.VanTassel")
+  end
+  
   def self.search(search)
     if search
-      find(:all, :conditions => ['cms_page_id LIKE ?', "%#{search}%"])
+      find(:all, :conditions => ['cms_page_id LIKE ?', "#{search}"])
     else
       find(:all)
     end

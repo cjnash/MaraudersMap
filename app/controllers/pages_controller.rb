@@ -30,12 +30,34 @@ class PagesController < ApplicationController
       @pages = Page.communityandama.all(:order => 'headline ASC')
     elsif params[:section] == "Other"
       @pages = Page.other.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Christopher.Nash"
+      @pages = Page.christopher.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Amanda.Doucette"
+      @pages = Page.amanda.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Laura.Urbanowski"
+      @pages = Page.laura.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Krista.Vieira"
+      @pages = Page.krista.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Jason.Buzzell"
+      @pages = Page.jason.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Johnn.Four"
+      @pages = Page.johnn.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Darrell.Winwood"
+      @pages = Page.darrell.all(:order => 'headline ASC')
+    elsif params[:created_by] == "RuthAnn.Raycroft"
+      @pages = Page.ruthann.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Dwain.SagerWilson"
+      @pages = Page.dwain.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Esci.Cagaoan"
+      @pages = Page.esci.all(:order => 'headline ASC')
+    elsif params[:created_by] == "Sarah.VanTassel"
+      @pages = Page.sarahvt.all(:order => 'headline ASC')
     else
       @pages = Page.search(params[:search])
     end
     
     @user = current_user
-    @counter = Page.count(params[:status] == "Live!")
+    @counter = Page.live.count
     
     respond_to do |format|
       format.html # index.html.erb
