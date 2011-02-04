@@ -20,7 +20,7 @@
 <br>
 <% @pages.each do |page| %>
   <tr>
-    <td><%= link_to page.headline, page %></td>
+    <td><%= page.path %> | <%= link_to page.headline, page %></td>
   </tr>
 <% end %>
 </table>

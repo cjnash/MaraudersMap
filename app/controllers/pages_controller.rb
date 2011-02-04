@@ -7,9 +7,9 @@ class PagesController < ApplicationController
   def index
     
     if params[:status] == "offline"
-      @pages = Page.offline.all(:order => 'headline ASC')
+      @pages = Page.offline.all(:order => 'path ASC')
     elsif params[:status] == "live!"
-      @pages = Page.live.all(:order => 'headline ASC')
+      @pages = Page.live.all(:order => 'path ASC')
     elsif params[:section] == "Membership"
       @pages = Page.membership.all(:order => 'headline ASC')
     elsif params[:section] == "Travel"
@@ -62,6 +62,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
+      format.csv  { render :csv => Page.all}
     end
   end
 
