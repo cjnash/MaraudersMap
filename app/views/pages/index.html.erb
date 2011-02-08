@@ -11,6 +11,7 @@
     (Or by 
       <%= link_to 'Amanda', pages_path(:created_by => "Amanda.Doucette") %> | <%= link_to 'Christopher', pages_path(:created_by => "Christopher.Nash") %> | <%= link_to 'Darrell', pages_path(:created_by => "Darrell.Winwood") %>  | <%= link_to 'Dwain', pages_path(:created_by => "Dwain.SagerWilson") %> | <%= link_to 'Esci', pages_path(:created_by => "Esci.Cagaoan") %> | <%= link_to 'Jason', pages_path(:created_by => "Jason.Buzzell") %> | <%= link_to 'Johnn', pages_path(:created_by => "Johnn.Four") %> | <%= link_to 'Krista', pages_path(:created_by => "Krista.Vieira") %> | <%= link_to 'Laura', pages_path(:created_by => "Laura.Urbanowski") %> | <%= link_to 'RuthAnn', pages_path(:created_by => "RuthAnn.Raycroft") %> | <%= link_to 'SarahvT', pages_path(:created_by => "Sarah.VanTassel") %> )</p>
     <hr>
+<div id="index_list">
 <table>  
   <tr>  
     <th></th>  
@@ -20,10 +21,11 @@
 <br>
 <% @pages.each do |page| %>
   <tr>
-    <td><%= page.path %> | <%= link_to page.headline, page %></td>
+    <td style="color:#755305"><%= page.path %> / <%= link_to page.headline, page %></td>
   </tr>
 <% end %>
 </table>
+</div>
 </div>
 
 <div id="sidebar">

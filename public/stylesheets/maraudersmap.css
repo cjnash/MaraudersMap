@@ -16,7 +16,7 @@ h2 {
 body, p, ol, ul, td {
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
   font-size:   12px;
-  line-height: 15px;
+  line-height: 16px;
   font-color: #000;
 }
 
@@ -95,6 +95,11 @@ div.field, label, div.actions {
   clear: left;
   float: left;
   margin-left: 10px;
+}
+
+#index_list p tr td {
+  color: white;
+  font-size: 10px;
 }
 
 #sidebar p {
