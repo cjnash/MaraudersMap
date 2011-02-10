@@ -22,6 +22,10 @@ class Page < ActiveRecord::Base
     self.where(:status => "Offline")
   end
   
+  def self.everything
+    self.where(:status => "Everything")
+  end
+  
   def self.membership
     self.where(:section => "Membership")
   end
