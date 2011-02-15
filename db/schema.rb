@@ -10,7 +10,41 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110131150424) do
+ActiveRecord::Schema.define(:version => 20110215165441) do
+
+  create_table "assets", :force => true do |t|
+    t.string   "file_name"
+    t.string   "file_type"
+    t.datetime "published_date"
+    t.integer  "size"
+    t.integer  "folder_id"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "folders", :force => true do |t|
+    t.string   "path"
+    t.integer  "folder_id"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "metadatas", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "author"
+    t.string   "editor"
+    t.string   "browser_title"
+    t.string   "content_title"
+    t.integer  "nav2"
+    t.integer  "nav3"
+    t.string   "keywords"
+    t.string   "description"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", :force => true do |t|
     t.string   "commenter"
@@ -20,23 +54,74 @@ ActiveRecord::Schema.define(:version => 20110131150424) do
     t.datetime "updated_at"
   end
 
+  create_table "page_editors", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
-    t.date    "created_at"
-    t.date    "updated_at"
-    t.string  "headline"
-    t.integer "cms_page_id"
-    t.string  "section"
-    t.string  "path"
-    t.string  "url"
-    t.string  "created_by"
-    t.string  "updated_by"
-    t.string  "reviewed_by"
-    t.date    "reviewed_date"
-    t.string  "status"
-    t.string  "deep_link"
-    t.string  "user_state"
-    t.string  "template"
-    t.date    "next_review_date"
+    t.date     "created_at"
+    t.date     "updated_at"
+    t.integer  "cms_page_id"
+    t.string   "created_by"
+    t.string   "updated_by"
+    t.string   "reviewed_by"
+    t.date     "reviewed_date"
+    t.string   "deep_link"
+    t.string   "user_state"
+    t.string   "template"
+    t.date     "next_review_date"
+    t.boolean  "online"
+    t.integer  "section_id"
+    t.integer  "second_level_nav_id"
+    t.integer  "third_level_nav_id"
+    t.string   "page_type"
+    t.string   "file_name"
+    t.datetime "published_date"
+  end
+
+  create_table "second_level_navs", :force => true do |t|
+    t.string   "name"
+    t.integer  "cms_page_id"
+    t.integer  "section_id"
+    t.string   "url"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "section_assets", :force => true do |t|
+    t.integer  "folder_id"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "section_editors", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sections", :force => true do |t|
+    t.string   "name"
+    t.string   "path"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "third_level_navs", :force => true do |t|
+    t.string   "name"
+    t.integer  "cms_page_id"
+    t.integer  "second_level_nav_id"
+    t.string   "url"
+    t.boolean  "online"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

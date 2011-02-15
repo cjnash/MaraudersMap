@@ -1,0 +1,14 @@
+<h1>Asset Folders</h1>
+
+<ul>
+	<li>
+		<%= link_to @folder.directory, folder_path(@folder) %>
+		<ul>
+			<% @folder.folders.each do |subfolder| %>
+  		<li>
+				<%= link_to subfolder.directory, folder_path(subfolder) %>
+			</li>
+			<% end %>
+		</ul>
+	</li>
+</ul>

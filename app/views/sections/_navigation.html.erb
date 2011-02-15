@@ -1,0 +1,11 @@
+<div id="pageinfoheadline">
+  <h1>AMA Website Content Sections</h1>
+</div>
+  
+<div id="mainbody">
+	<ul>
+	<% @sections.each do |section| %>
+		<li><%= link_to section.name, section_path(section) %></li>
+	<% end %>
+	</ul>
+</div>

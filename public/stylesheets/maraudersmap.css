@@ -56,6 +56,12 @@ div.field, label, div.actions {
   text-align: center;
 }
 
+#assetinfo {
+  clear: left;
+  float: left;
+  margin-left: 15px;
+}
+
 #pageinfo {
   clear: left;
   float: left;
@@ -145,4 +151,8 @@ div.field, label, div.actions {
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+#assetinfo table th, td  {
+	padding: 4px 10px;
 }

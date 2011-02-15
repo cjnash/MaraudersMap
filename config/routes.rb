@@ -5,6 +5,11 @@ MaraudersMap::Application.routes.draw do
   
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  resources :sections, :only => [:index, :show] do
+    resources :pages
+  end
+  
+  resources :folders, :only => [:index, :show]
 
   root :to => "pages#index"
   

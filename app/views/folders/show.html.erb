@@ -1,0 +1,65 @@
+<div id="pageinfoheadline">
+	<h1><%= @folder.directory %></h1>
+</div>
+<div id="assetinfo">
+	<% if @folder.assets.pdfs.present? %>
+	<h2>
+		PDFs
+	</h2>
+	<table>
+		<tr>
+			<th>
+				File Name
+			</th>
+			<th>
+				Last Published
+			</th>
+			<th>
+				File Size
+			</th>
+		</tr>
+		<% @folder.assets.pdfs.each do |asset| %>
+		<tr>
+			<td>
+				<%= asset.file_name %>
+			</td>
+			<td>
+				<%= pretty_date(asset.published_date) %>
+			</td>
+			<td>
+				<%= file_size(asset.size) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	<% end %>
+	<% if @folder.assets.images.present? %>
+	<h2>
+		Images
+	</h2>
+	<table>
+		<th>
+			File Name
+		</th>
+		<th>
+			Last Published
+		</th>
+		<th>
+			File Size
+		</th>
+		<% @folder.assets.images.each do |asset| %>
+		<tr>
+			<td>
+				<%= asset.file_name %>
+			</td>
+			<td>
+				<%= pretty_date(asset.published_date) %>
+			</td>
+			<td>
+				<%= file_size(asset.size) %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+	<% end %>
+</div>

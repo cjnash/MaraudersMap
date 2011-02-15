@@ -15,6 +15,25 @@
   <%= @user.password %>
 </p>
 
+<% if @user.sections.present? %>
+	<h2>
+		Content Sections
+	</h2>
+	<ul>
+	<% @user.sections.each do |section| %>
+		<li><%= link_to section.name, section_path(section) %>
+	<% end %>
+	</ul>
+<% end %>
+
+<h2>
+	Pages
+</h2>
+<ul>
+<% @user.pages.by_name.each do |page| %>
+	<li><%= link_to page.metadata.content_title.html_safe, page_path(page) %></li>
+<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

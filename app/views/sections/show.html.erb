@@ -1,0 +1,46 @@
+<div id="pageinfoheadline">
+  <h1><%= @section.name %></h1>
+</div>
+  
+<div id="mainbody">
+	<h2>
+		Navigation
+	</h2>
+	<ul>
+	<% @section.second_level_navs.each do |nav2| %>
+		<% if nav2.page %>
+			<li><%= link_to nav2.name.html_safe, page_path(nav2.page) %></li>
+		<% else %>
+			<li><%= link_to nav2.name.html_safe, nav2.link %> (resource)</li>
+		<% end %>
+		<% if nav2.third_level_nav? %>
+			<ul>
+				<% nav2.third_level_navs.each do |nav3| %>
+					<% if nav3.page %>
+						<li><%= link_to nav3.name.html_safe, page_path(nav3.page) %></li>
+					<% else %>
+						<li><%= link_to nav3.name.html_safe, nav3.link %> (resource)</li>
+					<% end %>
+					<% if nav3.hidden_pages? %>
+						<ul>
+							<% nav3.hidden_pages.each do |hidden_page| %>
+								<li><%= link_to hidden_page.metadata.content_title.html_safe, page_path(hidden_page) %></li>
+							<% end %>
+						</ul>
+					<% end %>
+				<% end %>
+			</ul>
+		<% end %>
+	<% end %>
+	</ul>
+	<h2>
+		Assets
+	</h2>
+	<ul>
+	<% @section.folders.each do |folder| %>
+		<li>
+			<%= link_to folder.path, folder_path(folder) %>
+		</li>
+	<% end %>
+	</ul>
+</div>

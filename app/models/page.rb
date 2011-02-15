@@ -1,113 +1,52 @@
 class Page < ActiveRecord::Base
-  belongs_to :user
+  has_many :page_editors
+  has_many :users, :through => :page_editors
+  belongs_to :section
+  belongs_to :second_level_nav
+  belongs_to :third_level_nav
   has_many :notes
+  has_one :metadata
   
-  validates :headline, :presence => true
+  scope :by_name, lambda {
+    joins(:metadata).
+    order('metadatas.content_title')
+  }
+  
+#  validates :headline, :presence => true
   validates :cms_page_id, :presence => true, :uniqueness => true
-  validates :status, :presence => true
-  validates :section, :presence => true
-  validates :path, :presence => true
-  validates :url, :presence => true
-  validates :reviewed_by, :presence => true
-  validates :reviewed_date, :presence => true
-  validates :user_state, :presence => true
-  validates :template, :presence => true
-  validates :next_review_date, :presence => true
-
-  def self.live
-    self.where(:status => "Live!")
-  end
-    
-  def self.offline
-    self.where(:status => "Offline")
+#  validates :status, :presence => true
+#  validates :section, :presence => true
+#  validates :path, :presence => true
+#  validates :url, :presence => true
+#  validates :reviewed_by, :presence => true
+#  validates :reviewed_date, :presence => true
+#  validates :user_state, :presence => true
+#  validates :template, :presence => true
+#  validates :next_review_date, :presence => true
+  
+  def url
+    "#{self.path}/#{self.base_file_name}"
   end
   
-  def self.everything
-    self.where(:status => "Everything")
+  def path
+    self.section.path
   end
   
-  def self.membership
-    self.where(:section => "Membership")
+  def base_file_name
+    base_file_name = File.basename(self.file_name, File.extname(self.file_name))
+    File.basename(base_file_name, File.extname(base_file_name))
   end
   
-  def self.travel
-    self.where(:section => "Travel")
+  def second_level?
+    return !third_level? && self.metadata.nav2.present?
   end
   
-  def self.auto
-    self.where(:section => "Auto")
+  def third_level?
+    return self.metadata.nav3.present?
   end
   
-  def self.registries
-    self.where(:section => "Registries")
-  end
-  
-  def self.insurance
-    self.where(:section => "Insurance")
-  end
-  
-  def self.deals
-    self.where(:section => "Deals")
-  end
-  
-  def self.drivered
-    self.where(:section => "Driver Ed")
-  end
-  
-  def self.financial
-    self.where(:section => "Financial*")
-  end
-  
-  def self.communityandama
-    self.where(:section => "Community & AMA")
-  end
-  
-  def self.other
-    self.where(:section => "Other")
-  end
-  
-  def self.christopher
-    self.where(:created_by => "Christopher.Nash")
-  end
-  
-  def self.amanda
-    self.where(:created_by => "Amanda.Doucette")
-  end
-  
-  def self.laura
-    self.where(:created_by => "Laura.Urbanowski")
-  end
-  
-  def self.krista
-    self.where(:created_by => "Krista.Vieira")
-  end
-  
-  def self.jason
-    self.where(:created_by => "Jason.Buzzell")
-  end
-  
-  def self.johnn
-    self.where(:created_by => "Johnn.Four")
-  end
-  
-  def self.darrell
-    self.where(:created_by => "Darrell.Winwood")
-  end
-  
-  def self.ruthann
-    self.where(:created_by => "RuthAnn.Raycroft")
-  end
-  
-  def self.dwain
-    self.where(:created_by => "Dwain.SagerWilson")
-  end
-  
-  def self.esci
-    self.where(:created_by => "Esci.Cagaoan")
-  end
-  
-  def self.sarahvt
-    self.where(:created_by => "Sarah.VanTassel")
+  def status
+    self.online? ? "Live!" : "Offline"
   end
   
   def self.search(search)
@@ -117,10 +56,5 @@ class Page < ActiveRecord::Base
       find(:all)
     end
   end
-  
-  # Haven't figured out how to use this kind of filtering yet for dropdowns, so I've kept this here but commented it out. The selects are done in the view.
- # STATUS = ["Live!", "Offline"]
- # SECTIONS = ["Membership", "Travel", "Auto", "Registries", "Insurance", "Driver Ed", "Financial**", "AMA & Community", "Other"]
- # USERS = ["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Krista", "Jason", "Johnn", "RuthAnn", "Sarah vT", "Other"]
   
 end
