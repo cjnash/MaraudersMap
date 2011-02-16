@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @profile.user.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @profile.user.email %>
+</p>
+
+<% if @profile.user.sections.present? %>
+	<h2>
+		Content Sections
+	</h2>
+	<ul>
+	<% @profile.user.sections.each do |section| %>
+		<li><%= link_to section.name, section_path(section) %>
+	<% end %>
+	</ul>
+<% end %>
+
+<h2>
+	Pages
+</h2>
+<ul>
+<% @profile.user.pages.by_name.each do |page| %>
+	<li><%= link_to page.metadata.content_title.html_safe, page_path(page) %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Back', profiles_path %>

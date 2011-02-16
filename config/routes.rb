@@ -3,15 +3,17 @@ MaraudersMap::Application.routes.draw do
     resources :notes
   end
   
-  resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  devise_for :users
+  resources :dashboards, :only => [:index]
+  resources :profiles, :only => [:index, :show]
+  
   resources :sections, :only => [:index, :show] do
     resources :pages
   end
   
   resources :folders, :only => [:index, :show]
 
-  root :to => "pages#index"
+  root :to => "dashboards#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

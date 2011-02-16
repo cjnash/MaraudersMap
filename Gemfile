@@ -4,8 +4,7 @@ gem 'rails', '3.0.4'
 gem 'devise'
 gem 'cancan'
 gem 'meta_search'
-gem 'will_paginate', '~> 3.0.pre2'
-gem 'jquery-rails'
+gem 'kaminari'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 

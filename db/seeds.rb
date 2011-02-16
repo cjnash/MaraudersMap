@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Mayor.create(:name => 'Daley', :city => cities.first)
-
 sections = 
   [
   {:name => 'Membership', :path => 'membership'},
@@ -63,9 +55,7 @@ section_editors = [
   
 section_editors.each do |editor|
   user = User.find_by_username(editor[:username])
-  puts editor
   editor[:sections].each do |name|
-    puts name
     if name == 'All'
       user.sections = Section.all
     else

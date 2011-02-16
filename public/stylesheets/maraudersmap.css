@@ -153,6 +153,11 @@ div.field, label, div.actions {
   list-style: square;
 }
 
-#assetinfo table th, td  {
+#assetinfo table th, td {
 	padding: 4px 10px;
+}
+
+#login {
+	float: right;
+	padding-right: 20px;
 }

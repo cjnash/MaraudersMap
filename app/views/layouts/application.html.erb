@@ -7,10 +7,13 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	
   <div id="banner">
     <h1>The Marauder's Map</h1>
   </div>
-  
+  <div id="login">
+		<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
+	</div>
   <div id="notice">
   <%- flash.each do |name, msg| -%>
     <%= content_tag :div, msg, :id => "flash_#{name}" %>

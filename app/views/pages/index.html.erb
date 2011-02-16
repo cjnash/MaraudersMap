@@ -3,25 +3,28 @@
 </div>
   
 <div id="mainbody">
-  <h3>List 
-  <%= link_to 'live pages', pages_path(:status => "live!") %>, <%= link_to 'offline pages', pages_path(:status => "offline") %>, or just <%= link_to 'show me everything', pages_path(:status => "everything") %></h3>
-  <p>
-  (Or only 
-    <%= link_to 'Membership', pages_path(:section => "Membership") %> | <%= link_to 'Travel', pages_path(:section => "Travel") %> | <%= link_to 'Auto', pages_path(:section => "Auto") %> | <%= link_to 'Registries', pages_path(:section => "Registries") %> | <%= link_to 'Insurance', pages_path(:section => "Insurance") %> | <%= link_to 'Deals', pages_path(:section => "Deals") %> | <%= link_to 'Driver Ed', pages_path(:section => "Driver Ed") %> | <%= link_to 'Financial*', pages_path(:section => "Financial*") %> | <%= link_to 'Community & AMA', pages_path(:section => "Community & AMA") %> | or <%= link_to 'Other', pages_path(:section => "Other") %>)<br>
-    (Or by 
-      <%= link_to 'Amanda', pages_path(:created_by => "Amanda.Doucette") %> | <%= link_to 'Christopher', pages_path(:created_by => "Christopher.Nash") %> | <%= link_to 'Darrell', pages_path(:created_by => "Darrell.Winwood") %>  | <%= link_to 'Dwain', pages_path(:created_by => "Dwain.SagerWilson") %> | <%= link_to 'Esci', pages_path(:created_by => "Esci.Cagaoan") %> | <%= link_to 'Jason', pages_path(:created_by => "Jason.Buzzell") %> | <%= link_to 'Johnn', pages_path(:created_by => "Johnn.Four") %> | <%= link_to 'Krista', pages_path(:created_by => "Krista.Vieira") %> | <%= link_to 'Laura', pages_path(:created_by => "Laura.Urbanowski") %> | <%= link_to 'RuthAnn', pages_path(:created_by => "RuthAnn.Raycroft") %> | <%= link_to 'SarahvT', pages_path(:created_by => "Sarah.VanTassel") %> )</p>
-    <hr>
+	<h3>
+		Live Pages
+	</h3>
 <div id="index_list">
+<%= paginate @pages %>
 <table>  
   <tr>  
-    <th></th>  
-    <th></th>  
-    <th></th>  
+    <th>Content Title</th>  
+    <th>Section</th>  
+    <th>Last Published</th>  
   </tr>
-<br>
 <% @pages.each do |page| %>
   <tr>
-    <td style="color:#755305"><%= page.path %> / <%= link_to page.headline, page %></td>
+    <td style="color:#755305">
+			<%= link_to page.metadata.content_title.html_safe, page_path(page) %>
+		</td>
+		<td>
+			<%= page.section.name %>
+		</td>
+		<td>
+			<%= pretty_date(page.published_date) %>
+		</td>
   </tr>
 <% end %>
 </table>
@@ -33,5 +36,5 @@
   <%= link_to '+ Create a New Page Listing', new_page_path %></p>
   <%= render :partial => "pages/search" %>
   <p>
-    Live page count: <strong><%= @counter %></strong></p>
+    Live page count: <strong><%= Page.live.size %></strong></p>
 </div>

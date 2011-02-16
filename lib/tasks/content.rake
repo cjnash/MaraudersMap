@@ -48,8 +48,8 @@ namespace :content do
   end
   
   def folder(path)
-    folder = Folder.find_by_path(path)
-    folder = Folder.new(:path => path) if folder.nil?
+    folder = Folder.find_by_path(path.to_s)
+    folder = Folder.new(:path => path.to_s) if folder.nil?
     folder.online = true
     folder_sections(folder)
     folder
@@ -171,7 +171,7 @@ namespace :content do
     system("rsync -rzt --delete deploy@staging.amaabca.com:public_html/amaabca/current/content/* #{Rails.root.join('content')}")
   end
   
-  namespace :import do
+  namespace :update do
     task :navigation => :environment do
       Section.find(:all).each do |section|
         clear_navigation(section)
@@ -223,6 +223,6 @@ namespace :content do
     
   end
   
-  task :import => ['content:import:navigation', 'content:import:pages', 'content:import:assets']
+  task :update => ['content:sync', 'content:import:navigation', 'content:import:pages', 'content:import:assets']
   
 end

@@ -7,9 +7,28 @@ class Page < ActiveRecord::Base
   has_many :notes
   has_one :metadata
   
+  paginates_per 50
+  
   scope :by_name, lambda {
     joins(:metadata).
     order('metadatas.content_title')
+  }
+  
+  scope :live, lambda {
+    joins(:metadata).
+    order('metadatas.content_title').
+    where(:online => true)
+  }
+  
+  scope :live_by_section, lambda {
+    joins(:metadata).
+    joins(:section).
+    order('sections.name, metadatas.content_title').
+    where(:online => true)
+  }
+  
+  scope :recent, lambda {
+    order('published_date desc')
   }
   
 #  validates :headline, :presence => true

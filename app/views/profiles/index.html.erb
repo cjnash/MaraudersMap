@@ -1,0 +1,20 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= profile.user.username %></td>
+    <td><%= profile.user.email %></td>
+    <td><%= link_to 'Show', profile %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

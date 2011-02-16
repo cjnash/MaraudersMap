@@ -6,58 +6,7 @@ class PagesController < ApplicationController
   
   def index
     
-    if params[:status] == "offline"
-      @pages = Page.offline.all(:order => 'path ASC')
-    elsif params[:status] == "live!"
-      @pages = Page.live.all(:order => 'path ASC')
-    elsif params[:section] == "Membership"
-      @pages = Page.membership.all(:order => 'headline ASC')
-    elsif params[:section] == "Travel"
-      @pages = Page.travel.all(:order => 'headline ASC')
-    elsif params[:section] == "Auto"
-      @pages = Page.auto.all(:order => 'headline ASC')
-    elsif params[:section] == "Registries"
-      @pages = Page.registries.all(:order => 'headline ASC')
-    elsif params[:section] == "Insurance"
-      @pages = Page.insurance.all(:order => 'headline ASC')
-    elsif params[:section] == "Deals"
-      @pages = Page.deals.all(:order => 'headline ASC')
-    elsif params[:section] == "Driver Ed"
-      @pages = Page.drivered.all(:order => 'headline ASC')
-    elsif params[:section] == "Financial*"
-      @pages = Page.financial.all(:order => 'headline ASC')
-    elsif params[:section] == "Community & AMA"
-      @pages = Page.communityandama.all(:order => 'headline ASC')
-    elsif params[:section] == "Other"
-      @pages = Page.other.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Christopher.Nash"
-      @pages = Page.christopher.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Amanda.Doucette"
-      @pages = Page.amanda.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Laura.Urbanowski"
-      @pages = Page.laura.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Krista.Vieira"
-      @pages = Page.krista.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Jason.Buzzell"
-      @pages = Page.jason.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Johnn.Four"
-      @pages = Page.johnn.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Darrell.Winwood"
-      @pages = Page.darrell.all(:order => 'headline ASC')
-    elsif params[:created_by] == "RuthAnn.Raycroft"
-      @pages = Page.ruthann.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Dwain.SagerWilson"
-      @pages = Page.dwain.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Esci.Cagaoan"
-      @pages = Page.esci.all(:order => 'headline ASC')
-    elsif params[:created_by] == "Sarah.VanTassel"
-      @pages = Page.sarahvt.all(:order => 'headline ASC')
-    else
-      @pages = Page.search(params[:search])
-    end
-    
-    @user = current_user
-    @counter = Page.live.count
+    @pages = Page.live_by_section.page params[:page]
     
     respond_to do |format|
       format.html # index.html.erb
