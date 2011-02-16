@@ -51,7 +51,7 @@
 <strong>Update History:</strong>
 <p>
 Last published on <%= pretty_date(@page.published_date) %><br/>
-Created on <%= pretty_date(@page.cms_created_at) %><br/>
+Created on <%= pretty_date(@page.cms_created_at.utc) %><br/>
 Last reviewed by <%= @page.reviewed_by %> on <%= pretty_date(@page.reviewed_date) %><br/>
 Next review date: <%= pretty_date(@page.next_review_date) %>
 </p>
