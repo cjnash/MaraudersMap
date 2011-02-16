@@ -35,4 +35,5 @@ MaraudersMap::Application.configure do
   config.active_support.deprecation = :stderr
   
   SITE_URL = 'http://www.ama.ab.ca'
+  SMARTEDIT_URL = 'http://web-otcms-pp01/CMS/ioRD.asp'
 end

@@ -130,6 +130,9 @@ namespace :content do
       page_name = File.basename(file_name, File.extname(file_name))
       page.file_name = "#{page_name}.html.erb"
       page.published_date = DateTime.parse(File.mtime(file_name).to_s)
+      page.cms_created_at = DateTime.parse(yaml['createdAt']) if yaml['createdAt']
+      page.cms_url = yaml['cmsURL'] if yaml['cmsURL']
+      page.template = yaml['template'] if yaml['template']
       page.online = true
       page.metadata.author = yaml['author']
       page.metadata.editor = yaml['editor']

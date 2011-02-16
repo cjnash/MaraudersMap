@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215211138) do
+ActiveRecord::Schema.define(:version => 20110216175424) do
 
   create_table "assets", :force => true do |t|
     t.string   "file_name"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(:version => 20110215211138) do
     t.string   "page_type"
     t.string   "file_name"
     t.datetime "published_date"
+    t.string   "cms_url"
+    t.datetime "cms_created_at"
   end
 
   create_table "profiles", :force => true do |t|

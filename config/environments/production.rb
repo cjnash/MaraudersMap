@@ -48,4 +48,7 @@ MaraudersMap::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  SITE_URL = 'http://www.ama.ab.ca'
+  SMARTEDIT_URL = 'http://web-otcms-pp01/CMS/ioRD.asp'
 end

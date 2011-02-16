@@ -5,48 +5,53 @@
 <div id="pageinfo">
   <h2>Vital Stats</h2>
 <p>
-  <b>CMS page ID #:</b>
+  <strong>CMS page ID #:</strong>
   <%= @page.cms_page_id %>
 </p>
 
 <p>
-  <b>Current status: </b><%= @page.status %>
+  <strong>Current status: </strong><%= @page.status %>
   </p>
   
 <p>
-  <b>Available to:</b>
+  <strong>Available to:</strong>
   <%= @page.user_state %>
 </p>
 
 <p>
-  <b>Site section:</b>
+  <strong>Site section:</strong>
 	<%= section_link %>
 </p>
 
 <p>
-  <b>Navigation path:</b>
+  <strong>Navigation path:</strong>
   <%= @page.path %>
 </p>
 
 <p>
-  <b>Permanent link:</b>
+	<strong>Permanent link:</strong>
   <%= link_to @page.url, @page.url %>
 </p>
 
 <p>
-  <b>Deeplink(s):</b>
+  <strong>Permanent link:</strong>
+  <%= link_to "Open in SmartEdit", "#{SMARTEDIT_URL}?#{@page.cms_url}", { :target => :blank } %>
+</p>
+
+<p>
+  <strong>Deeplink(s):</strong>
   <%= @page.deep_link %>
 </p>
 
 <p>
-  <b>CMS template:</b>
+  <strong>CMS template:</strong>
   <%= @page.template %>
 </p><br>
 
 <strong>Update History:</strong>
 <p>
 Last published on <%= pretty_date(@page.published_date) %><br/>
-Last updated by <%= @page.updated_by %> on <%= pretty_date(@page.updated_at) %><br/>
+Created on <%= pretty_date(@page.cms_created_at) %><br/>
 Last reviewed by <%= @page.reviewed_by %> on <%= pretty_date(@page.reviewed_date) %><br/>
 Next review date: <%= pretty_date(@page.next_review_date) %>
 </p>
@@ -65,7 +70,7 @@ Next review date: <%= pretty_date(@page.next_review_date) %>
   </div>
 <% end %>
 <br>
-<b>Past notes</b>
+<strong>Past notes</strong>
 <%= render  :partial => "notes/note",
             :collection => @page.notes, :order => "created_at DESC" %>
 </div>
