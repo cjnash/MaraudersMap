@@ -5,9 +5,12 @@ class PagesController < ApplicationController
   before_filter :authenticate_user!
   
   def index
+    params[:status] == 'offline' ? online = false : online = true
+    @pages = Page.by_section.where(:online => online).page params[:page]
+    @sections = Section.all
+    @profiles = Profile.all
     
-    @pages = Page.live_by_section.page params[:page]
-    
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }

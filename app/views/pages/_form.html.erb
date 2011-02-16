@@ -10,16 +10,6 @@
       </ul>
     </div>
   <% end %>
-    
-  <div class="field">
-    <%= f.label :cms_page_id, "CMS Page ID #" %>
-    <%= f.text_field :cms_page_id, :size => 6 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.select :status, options_for_select(["Live!", "Offline"]) %>
-  </div>
   
   <div class="field">
     <%= f.label "Available to" %>
@@ -27,25 +17,7 @@
   </div>
   
   <div class="field">
-    <%= f.label "Site section" %>
-    <%= f.select :section, options_for_select(["Membership", "Travel", "Auto", "Registries", "Insurance", "Deals", "Driver Ed", "Financial*", "Community & AMA", "Other"]) %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :path, "Navigation path" %><%= f.text_field :path, :size => 35 %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :url, "URL" %><%= f.text_field :url, :size => 100 %>
-  </div>
-  
-  <div class="field">
     <%= f.label :deep_link, "Deeplink(s)" %><%= f.text_field :deep_link, :size => 100 %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :template, "Page template" %>
-    <%= f.select :template, options_for_select(["Grid", "Tab/Multistep", "Form", "Landing Page", "Other"]) %>
   </div>
   
   <%= f.hidden_field :created_by, :value => @user.username, :only => :new %>
@@ -53,7 +25,7 @@
   
   <div class="field">
     <%= f.label :reviewed_by %>
-    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Laura", "Jason", "Johnn", "Krista", "RuthAnn", "Sarah vT", "Other"]) %> on 
+    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Laura", "Jason", "Johnn", "Krista", "Sarah vT", "Other"]) %> on 
     <%= f.date_select :reviewed_date %>
   </div>
   

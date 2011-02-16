@@ -27,6 +27,12 @@ class Page < ActiveRecord::Base
     where(:online => true)
   }
   
+  scope :by_section, lambda {
+    joins(:metadata).
+    joins(:section).
+    order('sections.name, metadatas.content_title')
+  }
+  
   scope :recent, lambda {
     order('published_date desc')
   }

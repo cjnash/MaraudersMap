@@ -4,7 +4,7 @@
   
 <div id="mainbody">
 	<h3>
-		Live Pages
+		List
 	</h3>
 <div id="index_list">
 <%= paginate @pages %>
@@ -32,9 +32,30 @@
 </div>
 
 <div id="sidebar">
-  <p>
-  <%= link_to '+ Create a New Page Listing', new_page_path %></p>
   <%= render :partial => "pages/search" %>
-  <p>
-    Live page count: <strong><%= Page.live.size %></strong></p>
+</div>
+  
+  <div id="sidebar">
+  <p>Live page count: <strong><%= Page.live.size %></strong></p>
+  </div>
+  
+  <div id="sidebar">
+  <p>View <%= link_to 'all live', pages_path(:status => :live) %> or <%= link_to 'offline', pages_path(:status => :offline) %> pages</p>
+  </div>
+  
+  <div id="sidebar">
+  <p><strong>View by section:</strong> <% @sections.each do |section| %>
+    <%= link_to section.name, section_path(section) %>
+	<% end %></p>
+	</div>
+	
+	<div id="sidebar">
+  <p><strong>View by user:</strong> <% @profiles.each do |profile| %>
+    <%= link_to profile.user.username, profile_path(profile) %>
+	<% end %></p>
+	</div>
+	
+
+<div id="footer">
+<%= link_to 'Back to your dashboard', dashboards_path %>
 </div>

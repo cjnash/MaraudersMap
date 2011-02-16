@@ -31,3 +31,27 @@
 		<%= render :partial => 'shared/pages', :locals => { :limit => 5 } %>
 	</p>
 </div>
+
+<div id="sidebar">
+  <%= render :partial => "pages/search" %>
+</div>
+  
+  <div id="sidebar">
+  <p>Live page count: <strong><%= Page.live.size %></strong></p>
+  </div>
+  
+  <div id="sidebar">
+  <p>View <%= link_to 'all live', pages_path(:status => :live) %> or <%= link_to 'offline', pages_path(:status => :offline) %> pages</p>
+  </div>
+  
+  <div id="sidebar">
+  <p><strong>View by section:</strong> <% @sections.each do |section| %>
+    <%= link_to section.name, section_path(section) %>
+	<% end %></p>
+	</div>
+	
+	<div id="sidebar">
+  <p><strong>View by user:</strong> <% @profiles.each do |profile| %>
+    <%= link_to profile.user.username, profile_path(profile) %>
+	<% end %></p>
+	</div>
