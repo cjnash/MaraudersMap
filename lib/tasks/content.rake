@@ -223,6 +223,6 @@ namespace :content do
     
   end
   
-  task :update => ['content:sync', 'content:import:navigation', 'content:import:pages', 'content:import:assets']
+  task :update => ['content:sync', 'content:update:navigation', 'content:update:pages', 'content:update:assets']
   
 end

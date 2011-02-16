@@ -33,7 +33,10 @@ users = [
   ]
   
 users.each do |user|
-  User.new(user).save
+  User.new(user).
+  user.profile = Profile.new
+  user.dashboard = Dashboard.new
+  user.save
 end
 
 section_editors = [
