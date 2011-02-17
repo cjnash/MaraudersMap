@@ -11,7 +11,7 @@
 		<% if nav2.page %>
 			<li><%= link_to nav2.name.html_safe, page_path(nav2.page) %></li>
 		<% else %>
-			<li><%= link_to nav2.name.html_safe, nav2.link %> (resource)</li>
+			<li><%= link_to nav2.name.html_safe, nav2.link %> (not local content)</li>
 		<% end %>
 		<% if nav2.third_level_nav? %>
 			<ul>
@@ -19,7 +19,7 @@
 					<% if nav3.page %>
 						<li><%= link_to nav3.name.html_safe, page_path(nav3.page) %></li>
 					<% else %>
-						<li><%= link_to nav3.name.html_safe, nav3.link %> (resource)</li>
+						<li><%= link_to nav3.name.html_safe, nav3.link %> (not local content)</li>
 					<% end %>
 					<% if nav3.hidden_pages? %>
 						<ul>

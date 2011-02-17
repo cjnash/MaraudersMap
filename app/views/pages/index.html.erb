@@ -3,14 +3,10 @@
 </div>
   
 <div id="mainbody">
-	<h3>
-		List
-	</h3>
 <div id="index_list">
-<%= paginate @pages %>
 <table>  
   <tr>  
-    <th>Content Title</th>  
+    <th>Page</th>  
     <th>Section</th>  
     <th>Last Published</th>  
   </tr>
@@ -57,5 +53,6 @@
 	
 
 <div id="footer">
-<%= link_to 'Back to your dashboard', dashboards_path %>
+  <p><%= paginate @pages %></p>
+  <p><%= link_to 'Back to your dashboard', dashboards_path %></p>
 </div>

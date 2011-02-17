@@ -100,6 +100,8 @@ div.field, label, div.actions {
 #mainbody {
   float: left;
   clear: left;
+  min-height: 500px;
+  min-width: 500px;
   margin-left: 10px;
 }
 

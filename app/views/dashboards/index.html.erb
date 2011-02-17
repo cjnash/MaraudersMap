@@ -1,26 +1,11 @@
 <div id="pageinfoheadline">
-  <h1>CIA Dashboard</h1>
+  <h1>My Dashboard</h1>
 </div>
   
 <div id="mainbody">
-	<ul>
-		<li>
-			<%= link_to 'My Profile', profile_path(current_user.profile) %>
-		</li>
-		<li>
-			<%= link_to 'AMA Publishers', profiles_path %>
-		</li>
-		<li>
-			<%= link_to 'Content Sections', sections_path %>
-		</li>
-		<li>
-			<%= link_to 'Live Web Pages', pages_path %>
-		</li>
-		<li>
-			<%= link_to 'Images and Files', folders_path %>
-		</li>
-	</ul>
-
+	<h3><%= link_to 'My Profile', profile_path(current_user.profile) %> | <%= link_to 'Live Web Pages', pages_path %> | <%= link_to 'List Publishers', profiles_path %> | 	<%= link_to 'List Sections', sections_path %> | <%= link_to 'Image and File Folders', folders_path %>
+	  </h3>
+<hr>
 	<p>
 		<%= render :partial => 'shared/user_pages', :locals => { :limit => 5 } %>
 	</p>
@@ -30,6 +15,7 @@
 	<p>
 		<%= render :partial => 'shared/pages', :locals => { :limit => 5 } %>
 	</p>
+	<hr>
 </div>
 
 <div id="sidebar">

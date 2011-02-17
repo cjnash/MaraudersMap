@@ -3,6 +3,6 @@
 		<%= section.name %> <%= limit %> most recently published pages
 	</h3>
 	<% section.pages.recent.limit(limit).each do |page| %>
-		<%= pretty_date(page.published_date) %> <%= page.metadata.content_title.html_safe %><br/>
+		<%= pretty_date(page.published_date) %> <%= link_to page.metadata.content_title.html_safe, page %><br/>
 	<% end %>
 <% end %>
