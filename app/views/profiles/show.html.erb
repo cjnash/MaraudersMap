@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= @profile.avatar %>
+  </p>
+
+<p>
   <b>Username:</b>
   <%= @profile.user.username %>
 </p>
@@ -29,6 +33,7 @@
 	<li><%= link_to page.metadata.content_title.html_safe, page_path(page) %></li>
 <% end %>
 </ul>
+
 
 <div id="footer">
 <%= link_to 'Back to your dashboard', dashboards_path %>

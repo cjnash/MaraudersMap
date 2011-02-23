@@ -9,7 +9,6 @@ class PagesController < ApplicationController
     @pages = Page.by_section.where(:online => online).page params[:page]
     @sections = Section.all
     @profiles = Profile.all
-    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -91,4 +90,9 @@ class PagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def search
+    @pages = Page.search(params[:search])
+  end
+  
 end

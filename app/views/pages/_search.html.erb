@@ -1,6 +1,6 @@
 <% form_tag pages_path, :method => 'get' do %>
   <p>
-  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
-  <%= submit_tag "Search by Page ID", :name => nil %>
+  <%= text_field_tag :search, params[:search], :size => 7, :id => 'search_field' %>
+  <%= submit_tag "Search by Page ID #", :name => nil %>
   </p>
 <% end %>

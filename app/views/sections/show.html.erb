@@ -3,9 +3,9 @@
 </div>
   
 <div id="mainbody">
-	<h2>
+	<strong>
 		Site Navigation Tree
-	</h2>
+	</strong>
 	<ul>
 	<% @section.second_level_navs.each do |nav2| %>
 		<% if nav2.page %>
@@ -19,7 +19,7 @@
 					<% if nav3.page %>
 						<li><%= link_to nav3.name.html_safe, page_path(nav3.page) %></li>
 					<% else %>
-						<li><%= link_to nav3.name.html_safe, nav3.link %> (not local content)</li>
+						<li><i><%= link_to nav3.name.html_safe, nav3.link %> (not local content)</i></li>
 					<% end %>
 					<% if nav3.hidden_pages? %>
 						<ul>
@@ -33,14 +33,17 @@
 		<% end %>
 	<% end %>
 	</ul>
-	<h2>
-		Assets
-	</h2>
-	<ul>
+	</div>
+	
+<div id="sidebar">
+  <p>
+	<strong>Assets</strong><br>
 	<% @section.folders.each do |folder| %>
-		<li>
-			<%= link_to folder.path, folder_path(folder) %>
-		</li>
+			<%= link_to folder.path, folder_path(folder) %><br>
 	<% end %>
-	</ul>
+	</p>
+</div>
+
+<div id="footer">
+  <p><%= link_to 'Back to your dashboard', dashboards_path %></p>
 </div>

@@ -13,4 +13,8 @@ class DashboardsController < ApplicationController
     end
   end
   
+  def search
+    @pages = Page.search(params[:search])
+  end
+  
 end

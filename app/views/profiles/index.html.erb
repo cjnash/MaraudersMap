@@ -2,17 +2,14 @@
 
 <table>
   <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Password</th>
+    <th>User</th>
     <th></th>
   </tr>
-
+  
 <% @profiles.each do |profile| %>
   <tr>
-    <td><%= profile.user.username %></td>
-    <td><%= profile.user.email %></td>
-    <td><%= link_to 'Show', profile %></td>
+    <td><%= profile.avatar %></td>
+    <td><%= link_to profile.user.username, profile %></td>
   </tr>
 <% end %>
 </table>
