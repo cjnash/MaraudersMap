@@ -1,6 +1,6 @@
 <% sections.each do |section| %>
 	<h3>
-		Random: <%= section.name %> <%= limit %> most recently published pages
+		Random Section: <%= section.name %> <%= limit %> most recently published pages
 	</h3>
 	<% section.pages.recent.limit(limit).each do |page| %>
 		 <%= link_to page.metadata.content_title.html_safe, page %> (<%= pretty_date(page.published_date) %>)<br/>

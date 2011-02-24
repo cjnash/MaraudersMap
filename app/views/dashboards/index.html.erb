@@ -15,7 +15,9 @@
 		<%= render :partial => 'shared/section_pages', :locals => { :sections => [*Section.all.shuffle.first], :limit => 5 } %>
 	</p><br>
 
-	<strong><%= link_to 'My Profile', profile_path(current_user.profile) %> | <%= link_to 'List of Live Web Pages', pages_path %> | <%= link_to 'Image and File Folders', folders_path %> </strong>
+	<strong><%= link_to 'My Profile', profile_path(current_user.profile) %> <br>
+	<%= link_to 'List of Live Web Pages', pages_path %> <br>
+	<%= link_to 'Image and File Folders', folders_path %> </strong>
 
 </div>
 
@@ -23,22 +25,22 @@
   <%= render :partial => "pages/search" %>
 </div>
   
-  <div id="sidebar">
-  <p>Live page count: <strong><%= Page.live.size %></strong></p>
-  </div>
-  
-  <div id="sidebar">
-  <p>View <%= link_to 'all live', pages_path(:status => :live) %> or <%= link_to 'offline', pages_path(:status => :offline) %> pages</p>
-  </div>
-  
-  <div id="sidebar">
-  <p>View by <%= link_to 'section', sections_path %>:<br> <% @sections.each do |section| %>
-    <%= link_to section.name, section_path(section) %>
+ <div id="sidebar">
+ <p>Live page count: <strong><%= Page.live.size %></strong></p>
+ </div>
+ 
+ <div id="sidebar">
+ <p>View <strong><%= link_to 'all live', pages_path(:status => :live) %></strong> or <strong><%= link_to 'offline', pages_path(:status => :offline) %></strong> pages</p>
+ </div>
+ 
+ <div id="sidebar">
+ <p>View by <strong><%= link_to 'section', sections_path %>:</strong><br> <% @sections.each do |section| %>
+   <%= link_to section.name, section_path(section) %>
 	<% end %></p>
 	</div>
 	
 	<div id="sidebar">
-  <p>View by <%= link_to 'publisher', profiles_path %>:<br> <% @profiles.each do |profile| %>
-    <%= link_to profile.user.username, profile_path(profile) %>
+ <p>View by <strong><%= link_to 'publisher', profiles_path %>:</strong><br> <% @profiles.each do |profile| %>
+   <%= link_to profile.user.username, profile_path(profile) %>
 	<% end %></p>
 	</div>

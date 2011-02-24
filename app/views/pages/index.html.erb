@@ -36,20 +36,21 @@
   </div>
   
   <div id="sidebar">
-  <p>View <%= link_to 'all live', pages_path(:status => :live) %> or <%= link_to 'offline', pages_path(:status => :offline) %> pages</p>
+  <p>View <strong><%= link_to 'all live', pages_path(:status => :live) %></strong> or <strong><%= link_to 'offline', pages_path(:status => :offline) %></strong> pages</p>
   </div>
   
   <div id="sidebar">
-  <p><strong>View by section:</strong><br> <% @sections.each do |section| %>
+  <p>View by <strong><%= link_to 'section', sections_path %>:</strong><br> <% @sections.each do |section| %>
     <%= link_to section.name, section_path(section) %>
 	<% end %></p>
 	</div>
 	
 	<div id="sidebar">
-  <p><strong>View by user:</strong><br> <% @profiles.each do |profile| %>
+  <p>View by <strong><%= link_to 'publisher', profiles_path %>:</strong><br> <% @profiles.each do |profile| %>
     <%= link_to profile.user.username, profile_path(profile) %>
 	<% end %></p>
 	</div>
+
 	
 
 <div id="footer">

@@ -51,7 +51,7 @@ div.field, label, div.actions {
   padding-top: 22px;
   padding-bottom: 16px;
   font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino;
-  color: #daaf5a;	
+  color: #ffd273;	
   font-size: 46px;
   text-align: center;
 }
@@ -116,8 +116,8 @@ div.field, label, div.actions {
   margin-right: 1px;
   margin-left: 20px;
   margin-top: 10px;
-  padding: 1em;
-  width: 16em;
+  padding: 1.5em;
+  width: 18em;
   font-size: 13px;
   font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
   line-height: 18px;

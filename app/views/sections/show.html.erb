@@ -11,7 +11,7 @@
 		<% if nav2.page %>
 			<li><%= link_to nav2.name.html_safe, page_path(nav2.page) %></li>
 		<% else %>
-			<li><%= link_to nav2.name.html_safe, nav2.link %> (not local content)</li>
+			<li><i><%= link_to nav2.name.html_safe, nav2.link %> (not local content)</i></li>
 		<% end %>
 		<% if nav2.third_level_nav? %>
 			<ul>

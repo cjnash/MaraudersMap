@@ -1,6 +1,9 @@
 MaraudersMap::Application.routes.draw do
-  resources :pages do      
+  resources :pages do  
     resources :notes
+    collection do
+      post 'search'
+    end
   end
   
   devise_for :users

@@ -5,8 +5,8 @@
 <div id="pageinfo">
   <h2>Core Info</h2>
 <p>
-  <strong>CMS page ID #:</strong>
-  <%= @page.cms_page_id %> <%= link_to "(Open in SmartEdit)", "#{SMARTEDIT_URL}?#{@page.cms_url}", { :target => :blank } %>
+  <strong>CMS page ID #:
+  <%= @page.cms_page_id %> </strong><%= link_to "(Open in SmartEdit)", "#{SMARTEDIT_URL}?#{@page.cms_url}", { :target => :blank } %>
 </p>
 
 <p>
@@ -14,17 +14,15 @@
   </p>
 
 <p>
-  <strong>Navigation path:</strong>
-  <%= section_link %> / <%= @page.metadata.nav2 %> / <%= @page.metadata.nav3 %> / <%= @page.metadata.content_title %>
-</p>
-
-<p>
-Originally created on <%= pretty_date(@page.cms_created_at.utc) %> by <%= @page.metadata.author %></p>
-<p>
-Last published on <%= pretty_date(@page.published_date) %> by <%= @page.metadata.editor %></p> <br>
+Originally created on <%= pretty_date(@page.cms_created_at.utc) %> by <%= @page.metadata.author %>. Last published on <%= pretty_date(@page.published_date) %> by <%= @page.metadata.editor %></p> <br>
 
 
 <h2>Additional Info</h2>
+
+<p>
+  <strong>Navigation path:</strong>
+  <%= section_link %> / <%= @page.metadata.nav2 %> / <%= @page.metadata.nav3 %> / <%= @page.metadata.content_title %>
+</p>
 
 <p>
   <strong>URL:</strong>
