@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     params[:status] == 'offline' ? online = false : online = true
     @pages = Page.by_section.where(:online => online).page params[:page]
     @sections = Section.all
-    @profiles = Profile.all
+    @profiles = Profile.all    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,9 +20,14 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.find(params[:id])
+   # @page = Page.find(params[:id])
     @user = current_user
-    
+    unless params[:cms_page_id].nil?
+          @page = Page.find_by_cms_page_id(params[:cms_page_id])
+        else
+          @page = Page.find(params[:id])
+        end
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @page }
@@ -89,10 +94,6 @@ class PagesController < ApplicationController
       format.html { redirect_to(pages_url, :notice => 'The page has vanished.') }
       format.xml  { head :ok }
     end
-  end
-  
-  def search
-    @pages = Page.search(params[:search])
   end
   
 end

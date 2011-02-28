@@ -1,0 +1,82 @@
+<div id="pageinfo">
+  <h2>Core Info</h2>
+<p>
+  <strong>CMS page ID #:
+  <%= @page.cms_page_id %> </strong><%= link_to "(Open in SmartEdit)", "#{SMARTEDIT_URL}?#{@page.cms_url}", { :target => :blank } %>
+</p>
+
+<p>
+  <strong>Current status: </strong><%= @page.status %>
+  </p>
+
+<p>
+Originally created on <%= pretty_date(@page.cms_created_at.utc) %> by <%= @page.metadata.author %>. Last published on <%= pretty_date(@page.published_date) %> by <%= @page.metadata.editor %></p> <br>
+
+
+<h2>Additional Info</h2>
+
+<p>
+  <strong>Navigation path:</strong>
+  <%= section_link %> / <%= @page.metadata.nav2 %> / <%= @page.metadata.nav3 %> / <%= @page.metadata.content_title %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+http://www.ama.ab.ca/<%= @page.url %></p>
+
+<p>
+  <strong>Deeplink(s):</strong>
+  <%= @page.deep_link %>
+</p>
+
+<p>
+  <strong>Browser title:</strong>
+  <%= @page.metadata.browser_title.html_safe %></p>
+  
+<p>
+  <strong>Meta description:</strong>
+  <%= @page.metadata.description %></p>
+  
+<p>
+ <strong>CMS template:</strong>
+ <%= @page.template %></p>
+
+<p>
+  <strong>Available to:</strong>
+  <%= @page.user_state %></p>
+
+<p>
+  <strong>Last reviewed by</strong>
+<%= @page.reviewed_by %> on <%= pretty_date(@page.reviewed_date) %></p>
+
+<p>
+  <strong>Next review date: </strong>
+<%= pretty_date(@page.next_review_date) %></p>
+
+<p>
+  Marauder's Map additional info for this page was last updated by <%= @page.updated_by %> on <%= @page.updated_at %>.</p>
+
+</div>
+
+<div id="notes">
+<h2>Notebook</h2>
+<%= form_for([@page, @page.notes.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :body, :size => "50x10" %>
+  </div>
+  <%= f.hidden_field :commenter, :value => @user.username %>
+  <div class="actions">
+    <%= f.submit 'Add note' %>
+  </div>
+<% end %>
+<br>
+<strong>Past notes</strong>
+<%= render  :partial => "notes/note",
+            :collection => @page.notes, :order => "created_at DESC" %>
+</div>
+
+<div id="footer">
+<%= link_to 'Edit the user-assignable details for this page', edit_page_path(@page) %> |
+<%= link_to 'Go to the list of all pages', pages_path %> |
+<%= link_to 'Back to your dashboard', dashboards_path %>
+</div>
