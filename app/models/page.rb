@@ -76,7 +76,7 @@ class Page < ActiveRecord::Base
   
   def self.search(search)
     search_condition = "%" + search + "%"
-    find(:all, :conditions => ['cms_page_id LIKE ?', search_condition])
+    find(:all, :conditions => ['cms_page_id LIKE ?', search_condition, search_condition])
   end
   
 end

@@ -57,3 +57,6 @@
   <p><%= paginate @pages %></p>
   <p><%= link_to 'Back to your dashboard', dashboards_path %></p>
 </div>
+<div id="login">
+	<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
+</div>

@@ -1,4 +1,9 @@
-<h2>Sign in</h2>
+<h2><center>Messers. Nash and Van Den Beuken,<br>
+   Purveyors of Aids to Magical Content Makers<br>
+   are proud to present</center></h2>
+<h1><center>The Marauder's Map</center></h1><br>
+
+<h3>What are your magic words?</h3>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <p><%= f.label :email %><br />
@@ -11,7 +16,7 @@
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
   <% end -%>
 
-  <p><%= f.submit "Sign in" %></p>
+  <p><%= f.submit "Enter" %></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>
