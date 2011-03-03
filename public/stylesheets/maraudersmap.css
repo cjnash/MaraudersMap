@@ -1,22 +1,23 @@
 body { background: #daaf5a url('../images/crumpled_paper_273117.jpg'); color: #333; }
 
 h1 {
-  font-family: 'Walter Turncoat', arial, serif;
-  font-size: 26px;
-  font-color: #251a01;
+  font-family: 'IM Fell DW Pica SC', arial, serif;
+  font-size: 32px;
+  font-color: #fff;
 }
 
 h2 {
   font-family: 'Walter Turncoat', arial, serif;
   font-size: 22px;
-  font-color: #251a01;
+  line-height: 26px;
+  font-color: #fff;
 }
 
 body, p, ol, ul, td {
   font-family: 'Philosopher', arial, serif;
   font-size:   13px;
   line-height: 16px;
-  font-color: #000;
+  font-color: #fff;
 }
 
 pre {
@@ -91,7 +92,7 @@ div.field, label, div.actions {
 
 #notice {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 3px;
   margin-left: 10px;
 }

@@ -32,8 +32,8 @@ users = [
   {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'}
   ]
   
-users.each do |user|
-  User.new(user).
+users.each do |u|
+  user = User.new(u)
   user.profile = Profile.new
   user.dashboard = Dashboard.new
   user.save
