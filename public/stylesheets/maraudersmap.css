@@ -10,7 +10,7 @@ h2 {
   font-family: 'Walter Turncoat', arial, serif;
   font-size: 22px;
   line-height: 26px;
-  font-color: #fff;
+  font-color: #251a01;
 }
 
 body, p, ol, ul, td {
@@ -50,9 +50,11 @@ div.field, label, div.actions {
   height: 100%;
   padding-top: 12px;
   padding-bottom: 12px;
-  color: #251a01;	
-  font-size: 48px;
+  color: #251a01;
+  background-color: none;
   text-align: center;
+  text-decoration: none;	
+  font-size: 48px;
 }
 
 #assetinfo {
@@ -100,8 +102,8 @@ div.field, label, div.actions {
 #mainbody {
   float: left;
   clear: left;
-  min-height: 600px;
-  min-width: 500px;
+  min-height: 700px;
+  max-width: 700px;
   margin-left: 5px;
 }
 
@@ -115,7 +117,7 @@ div.field, label, div.actions {
   clear: top;
   margin-right: 1px;
   margin-left: 20px;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 1.5em;
   width: 18em;
   font-size: 14px;

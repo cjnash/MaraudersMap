@@ -7,8 +7,8 @@ class Page < ActiveRecord::Base
   has_many :notes
   has_one :metadata
   
-  paginates_per 50
-  
+  paginates_per 600
+    
   scope :by_name, lambda {
     joins(:metadata).
     order('metadatas.content_title')

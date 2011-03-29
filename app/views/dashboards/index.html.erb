@@ -15,9 +15,10 @@
 		<%= render :partial => 'shared/section_pages', :locals => { :sections => [*Section.all.shuffle.first], :limit => 5 } %>
 	</p><br>
 
-	<strong><%= link_to 'My Profile', profile_path(current_user.profile) %> <br>
+<h2>More links</h2>
+	<%= link_to 'My Profile', profile_path(current_user.profile) %> <br>
 	<%= link_to 'List of Live Web Pages', pages_path %> <br>
-	<%= link_to 'Image and File Folders', folders_path %> </strong><br>
+	<%= link_to 'Image and File Folders', folders_path %> <br>
 	<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
 
 </div>
@@ -45,3 +46,10 @@
    <%= link_to profile.user.username, profile_path(profile) %>
 	<% end %></p>
 	</div>
+	
+	<div id="sidebar">
+  <p>Download the <strong><%= link_to 'report', pages_path(@page, :format => :csv) %></strong>. <i>(Hint: Right click and "save as...")</i></p>
+ 	</div>
+ 	
+  <div id="footer">
+    <p><%= link_to 'Back to your dashboard', dashboards_path %> | <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %></p></div>

@@ -6,19 +6,19 @@
 <div id="index_list">
 <table>  
   <tr>  
-    <th>Page</th>  
     <th>Section</th>  
+    <th>Page</th>  
     <th>Last Published</th>  
   </tr>
 <% @pages.each do |page| %>
   <tr>
-    <td style="color:#755305">
-			<%= link_to page.metadata.content_title.html_safe, page_path(page) %>
-		</td>
-		<td>
+    <td width=125px>
 			<%= page.section.name %>
 		</td>
-		<td>
+    <td style="color:#755305", width=275px>
+			<%= link_to page.metadata.content_title.html_safe, page_path(page) %>
+		</td>
+		<td width=150px>
 			<%= pretty_date(page.published_date) %>
 		</td>
   </tr>
@@ -50,13 +50,11 @@
     <%= link_to profile.user.username, profile_path(profile) %>
 	<% end %></p>
 	</div>
-
 	
+	<div id="sidebar">
+  <p>Download the <strong><%= link_to 'report', pages_path(@page, :format => :csv) %></strong>. <i>(Hint: Right click and "save as...")</i></p>
+ 	</div>
 
 <div id="footer">
-  <p><%= paginate @pages %></p>
-  <p><%= link_to 'Back to your dashboard', dashboards_path %></p>
-</div>
-<div id="login">
-	<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
+  <p><%= link_to 'Back to your dashboard', dashboards_path %> | <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %></p>
 </div>

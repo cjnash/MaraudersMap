@@ -8,4 +8,14 @@ module PagesHelper
     date.strftime('%d %b %Y at %I:%M %p') if date
   end
   
+  def to_csv
+    FasterCSV.generate(:col_sep => ";", :row_sep => "\r\n") do |csv| 
+      Page.find(:all).each do |page|
+      end
+    end
+  end
+  
+  def default_by(by)
+    by || 'Nobody!'
+  end
 end

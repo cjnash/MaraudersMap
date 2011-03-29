@@ -13,7 +13,7 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @pages }
-      format.csv  { render :csv => Page.all}
+      format.csv  { render :csv => @pages }
     end
   end
 

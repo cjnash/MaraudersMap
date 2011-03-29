@@ -1,0 +1,4 @@
+<%= "Section,Page Id,Name,Created At,Created By,Last Edit,Last Editor,Online?,Meta Description,Browser Title,Deep Links" %>
+<% @pages.each do |page| %>
+<%= "#{page.section.name.html_safe},#{page.cms_page_id},#{page.metadata.content_title},#{page.cms_created_at},#{page.metadata.author},#{page.metadata.updated_at},#{page.metadata.editor},#{page.metadata.online},#{page.metadata.description},#{page.metadata.browser_title},#{page.deep_link}," %>
+<% end %>
