@@ -25,13 +25,9 @@
 
 <div id="sidebar">
   <%= render :partial => "pages/search" %>
-</div>
-  
- <div id="sidebar">
+  <br>
  <p>Live page count: <strong><%= Page.live.size %></strong></p>
- </div>
- 
- <div id="sidebar">
+ <br>
  <p>View <strong><%= link_to 'all live', pages_path(:status => :live) %></strong> or <strong><%= link_to 'offline', pages_path(:status => :offline) %></strong> pages</p>
  </div>
  

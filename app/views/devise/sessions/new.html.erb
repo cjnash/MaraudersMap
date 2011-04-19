@@ -1,22 +1,27 @@
+<br>
+
 <h2 style="black"><center>Messers. Nash and Van Den Beuken,<br>
    Purveyors of Aids to Magical Content Makers<br>
    are proud to present</center></h2>
+
 <h1 style="color: #660022"><center>The Marauder's Map</center></h1><br>
 
-<h3>What are the magic words?</h3>
+<br>
+
+<h3><center>What are the magic words?</center></h3>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.text_field :email %></p>
+  <p><center><%= f.label :email %><br />
+  <%= f.text_field :email, :size => 35 %></p>
 
   <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <%= f.password_field :password, :size => 35 %></p>
 
   <% if devise_mapping.rememberable? -%>
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
   <% end -%>
 
-  <p><%= f.submit "Enter" %></p>
+  <p><%= f.submit "Enter the map" %></center></p>
 <% end %>
 
 <%= render :partial => "devise/shared/links" %>

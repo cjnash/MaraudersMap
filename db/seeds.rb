@@ -16,10 +16,12 @@ sections.each do |section|
 end
 
 users = [
+  {:username => 'aly.halisky', :password => '3cH2qYi3LaaNo1dX', :email => 'alyson.halisky@ama.ab.ca'},
   {:username => 'amanda.doucette', :password => 'hM0vo4rJk8XVu4Hd', :email => 'amanda.doucette@ama.ab.ca'},
-  {:username => 'brad.grier', :password => 'C4iU3yacLd4a7af1', :email => 'brad.grier@ama.ab.ca'},
   {:username => 'christopher.nash', :password => 'ZWXKVsm2M654x80R', :email => 'christopher.nash@ama.ab.ca'},
-  {:username => 'darrell.winwood', :password => '1B624Mh46jw1R58N', :email => 'darrell.winwood@ama.ab.ca'},
+  {:username => 'disabled.brad.grier', :password => 'C4iU3yacLd4a7af1', :email => 'brad.grier@ama.ab.ca'},
+  {:username => 'disabled.darrell.winwood', :password => '1B624Mh46jw1R58N', :email => 'darrell.winwood@ama.ab.ca'},
+  {:username => 'disabled.ruthann.raycroft', :password => '6pqG3Sg824E8590U', :email => 'ruthann.raycroft@ama.ab.ca'},
   {:username => 'doug.stewart', :password => '7Z24W41467vx2Ji8', :email => 'doug.stewart@ama.ab.ca'},
   {:username => 'dwain.sager', :password => 'B6b49mIJbOOL5dVC', :email => 'dwain.sager@ama.ab.ca'},
   {:username => 'esci.cagaoan', :password => 'o6V1e09dh5xV6947', :email => 'esci.cagaoan@ama.ab.ca'},
@@ -27,8 +29,8 @@ users = [
   {:username => 'johnn.four', :password => 's76GE6P1863LRw8p', :email => 'johnn.four@ama.ab.ca'},
   {:username => 'krista.vieira', :password => 'zlyXArK96Gf4e0Is', :email => 'krista.vieira@ama.ab.ca'},
   {:username => 'laura.urbanowski', :password => '3kxYYS3t29Ji1Q6y', :email => 'laura.urbanowski@ama.ab.ca'},
+  {:username => 'liam.crotty', :password => '4BfO6EtYjAu52g6s', :email => 'liam.crotty@ama.ab.ca'},
   {:username => 'michael.beuken', :password => 'yb2125677b9347Tn', :email => 'michael.beuken@ama.ab.ca'},
-  {:username => 'ruthann.raycroft', :password => '6pqG3Sg824E8590U', :email => 'ruthann.raycroft@ama.ab.ca'},
   {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'}
   ]
   
@@ -41,18 +43,16 @@ end
 
 section_editors = [
   {:username => 'amanda.doucette', :sections => ['Insurance']},
-  {:username => 'brad.grier', :sections => ['Community & AMA']},
+  {:username => 'aly.halisky', :sections => ['Community & AMA', 'Driver Education']},
   {:username => 'christopher.nash', :sections => ['All']},
-  {:username => 'darrell.winwood', :sections => ['Auto & Driving', 'Driver Education']},
-  {:username => 'doug.stewart', :sections => ['Membership']},
   {:username => 'dwain.sager', :sections => ['Deals & Discounts']},
   {:username => 'esci.cagaoan', :sections => ['Travel']},
   {:username => 'jason.buzzell', :sections => ['Membership']},
   {:username => 'johnn.four', :sections => ['Community & AMA']},
-  {:username => 'krista.vieira', :sections => ['Registries', 'Financial', 'Community & AMA']},
+  {:username => 'krista.vieira', :sections => ['Registries', 'Financial', 'Auto & Driving']},
   {:username => 'laura.urbanowski', :sections => ['Insurance']},
+  {:username => 'liam.crotty', :sections => ['Community & AMA']},
   {:username => 'michael.beuken', :sections => ['All']},
-  {:username => 'ruthann.raycroft', :sections => ['Deals & Discounts']},
   {:username => 'sarah.vantassel', :sections => ['Travel']}
   ]
   
