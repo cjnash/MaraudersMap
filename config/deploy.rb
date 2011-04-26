@@ -49,7 +49,6 @@ namespace :deploy do
 
   desc "Run pending migrations on already deployed code"
   task :migrate, :only => {:primary => true}, :except => { :no_release => true } do
-    db.backup
     run "cd #{current_path}; rake RAILS_ENV=#{stage} db:migrate"
   end
 
@@ -70,7 +69,6 @@ namespace :deploy do
     task :remigrate, :only => {:primary => true}, :except => { :no_release => true } do
       confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
       exit unless confirm.downcase == 'y'
-      backup
       run "cd #{current_path}; rake RAILS_ENV=#{stage} db:remigrate"
     end
   end
