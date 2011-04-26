@@ -127,7 +127,12 @@ namespace :deploy do
     task :enable, :roles => :web do
       run "rm #{current_path}/public/system/maintenance.html"
     end
-  end  
+  end
+  
+  desc "Updating content database"
+  task :content_update, :only => {:primary => true}, :except => { :no_release => true } do
+    run "cd #{current_path}; rake RAILS_ENV=#{stage} content:update"
+  end
 end
 
 namespace :bundler do
