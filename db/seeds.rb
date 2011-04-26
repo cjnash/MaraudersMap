@@ -32,6 +32,7 @@ users = [
   {:username => 'liam.crotty', :password => '4BfO6EtYjAu52g6s', :email => 'liam.crotty@ama.ab.ca'},
   {:username => 'michael.beuken', :password => 'yb2125677b9347Tn', :email => 'michael.beuken@ama.ab.ca'},
   {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'}
+  {:username => 'jordan.babe', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'jordan.babe@ama.ab.ca'}  
   ]
   
 users.each do |u|
@@ -53,6 +54,7 @@ section_editors = [
   {:username => 'laura.urbanowski', :sections => ['Insurance']},
   {:username => 'liam.crotty', :sections => ['Community & AMA']},
   {:username => 'michael.beuken', :sections => ['All']},
+  {:username => 'jordan.babe', :sections => ['All']},  
   {:username => 'sarah.vantassel', :sections => ['Travel']}
   ]
   
