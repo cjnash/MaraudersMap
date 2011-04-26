@@ -26,7 +26,6 @@ namespace :deploy do
     run "git clone #{repository} #{current_path}"
     update
     run "mkdir -p #{current_path}/tmp/sockets && mkdir -p #{current_path}/tmp/pids"
-    db.create
     migrate
     seed
     start
@@ -62,7 +61,8 @@ namespace :deploy do
   namespace :db do  
     
     task :create do
-      run "cd #{current_path}; rake RAILS_ENV=#{stage} db:create"
+      #TODO need to grant all permissions to the database
+      #run "cd #{current_path}; rake RAILS_ENV=#{stage} db:create"
     end
     
     desc "Wipe tables then rerun all migrations and seed database"
