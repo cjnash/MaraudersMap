@@ -31,8 +31,13 @@ users = [
   {:username => 'laura.urbanowski', :password => '3kxYYS3t29Ji1Q6y', :email => 'laura.urbanowski@ama.ab.ca'},
   {:username => 'liam.crotty', :password => '4BfO6EtYjAu52g6s', :email => 'liam.crotty@ama.ab.ca'},
   {:username => 'michael.beuken', :password => 'yb2125677b9347Tn', :email => 'michael.beuken@ama.ab.ca'},
-  {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'}
-  {:username => 'jordan.babe', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'jordan.babe@ama.ab.ca'}  
+  {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'},
+  {:username => 'jordan.babe', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'jordan.babe@ama.ab.ca'},
+  {:username => 'paul.gonzales', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'paul.gonzales@ama.ab.ca'},
+  {:username => 'darko.dosenovic', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'darko.dosenovic@ama.ab.ca'},
+  {:username => 'michael.mcclenaghan', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'michael.mcclenaghan@ama.ab.ca'},
+  {:username => 'rod.hodgson', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'rod.hodgson@ama.ab.ca'},  
+  {:username => 'sarah.hammond', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'sarah.hammond@ama.ab.ca'}
   ]
   
 users.each do |u|
@@ -54,7 +59,12 @@ section_editors = [
   {:username => 'laura.urbanowski', :sections => ['Insurance']},
   {:username => 'liam.crotty', :sections => ['Community & AMA']},
   {:username => 'michael.beuken', :sections => ['All']},
-  {:username => 'jordan.babe', :sections => ['All']},  
+  {:username => 'jordan.babe', :sections => ['All']},
+  {:username => 'paul.gonzales', :sections => ['All']},
+  {:username => 'darko.dosenovic', :sections => ['All']},    
+  {:username => 'michael.mcclenaghan', :sections => ['All']},
+  {:username => 'rod.hodgson', :sections => ['All']},    
+  {:username => 'sarah.hammond', :sections => ['All']},  
   {:username => 'sarah.vantassel', :sections => ['Travel']}
   ]
   
