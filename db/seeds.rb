@@ -32,12 +32,12 @@ users = [
   {:username => 'liam.crotty', :password => '4BfO6EtYjAu52g6s', :email => 'liam.crotty@ama.ab.ca'},
   {:username => 'michael.beuken', :password => 'yb2125677b9347Tn', :email => 'michael.beuken@ama.ab.ca'},
   {:username => 'sarah.vantassel', :password => 'C45816R1Wx1T56pD', :email => 'sarah.vantassel@ama.ab.ca'},
-  {:username => 'jordan.babe', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'jordan.babe@ama.ab.ca'},
-  {:username => 'paul.gonzales', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'paul.gonzales@ama.ab.ca'},
-  {:username => 'darko.dosenovic', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'darko.dosenovic@ama.ab.ca'},
-  {:username => 'michael.mcclenaghan', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'michael.mcclenaghan@ama.ab.ca'},
-  {:username => 'rod.hodgson', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'rod.hodgson@ama.ab.ca'},  
-  {:username => 'sarah.hammond', :password => 'xkjldsfC45816R1Wx1T56pD', :email => 'sarah.hammond@ama.ab.ca'}
+  {:username => 'jordan.babe', :password => 'C45816R1Wx1Txyz1', :email => 'jordan.babe@ama.ab.ca'},
+  {:username => 'paul.gonzales', :password => 'C45816R1Wx1Txyz2', :email => 'paul.gonzales@ama.ab.ca'},
+  {:username => 'darko.dosenovic', :password => 'C45816R1Wx1Txyz3', :email => 'darko.dosenovic@ama.ab.ca'},
+  {:username => 'michael.mcclenaghan', :password => 'C45816R1Wx1Txyz4', :email => 'michael.mcclenaghan@ama.ab.ca'},
+  {:username => 'rod.hodgson', :password => 'C45816R1Wx1Txyz5', :email => 'rod.hodgson@ama.ab.ca'},  
+  {:username => 'sarah.hammond', :password => 'C45816R1Wx1Txyz6', :email => 'sarah.hammond@ama.ab.ca'}
   ]
   
 users.each do |u|
