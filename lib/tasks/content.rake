@@ -174,6 +174,10 @@ namespace :content do
     system("rsync -rzt --delete deploy@staging.amaabca.com:public_html/amaabca/current/content/* #{Rails.root.join('content')}")
   end
   
+  task :copy => :environment do 
+    system("cp -fR /home/deploy/public_html/amaabca/current/content/* #{Rails.root.join('current','content')}")
+  end
+  
   namespace :update do
     task :navigation => :environment do
       Section.find(:all).each do |section|
@@ -226,6 +230,7 @@ namespace :content do
     
   end
   
-  task :update => ['content:sync', 'content:update:navigation', 'content:update:pages', 'content:update:assets']
+  task :remote_update => ['content:sync', 'content:update:navigation', 'content:update:pages', 'content:update:assets']
+  task :update => ['content:copy', 'content:update:navigation', 'content:update:pages', 'content:update:assets']
   
 end
