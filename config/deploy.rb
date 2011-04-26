@@ -26,10 +26,12 @@ namespace :deploy do
     run "git clone #{repository} #{current_path}"
     update
     run "mkdir -p #{current_path}/tmp/sockets && mkdir -p #{current_path}/tmp/pids"
+    db.create
     migrate
     seed
     start
     cleanup
+    nginx.setup
   end
 
   desc "Update the deployed code."
@@ -55,42 +57,15 @@ namespace :deploy do
   task :seed, :only => {:primary => true}, :except => { :no_release => true } do
     confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
     exit unless confirm.downcase == 'y'
-    db.backup
     run "cd #{current_path}; rake RAILS_ENV=#{stage} db:seed"
   end
     
   namespace :db do  
-    desc "Export the database into the db/ folder"
-    task :backup, :only => {:primary => true}, :except => { :no_release => true } do
-      run "cd #{current_path}; rake RAILS_ENV=#{stage} db:data:backup"
-    end
-    
     
     task :create do
       run "cd #{current_path}; rake RAILS_ENV=#{stage} db:create"
     end
-  
-    desc "Export the database into the db/ folder"
-    task :restore, :only => {:primary => true}, :except => { :no_release => true } do
-      confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
-      exit unless confirm.downcase == 'y'
-      run "cd #{current_path}; rake RAILS_ENV=#{stage} db:data:restore"
-    end
-
-    desc "Export the database into the db/ folder"
-    task :restore_from_staging, :only => {:primary => true}, :except => { :no_release => true } do
-      confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
-      exit unless confirm.downcase == 'y'
-      run "cd #{current_path}; rake RAILS_ENV=#{stage} db:data:restore_from_staging"
-    end
-
-    desc "Export the database into the db/ folder"
-    task :restore_from_production, :only => {:primary => true}, :except => { :no_release => true } do
-      confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
-      exit unless confirm.downcase == 'y'
-      run "cd #{current_path}; rake RAILS_ENV=#{stage} db:data:restore_from_production"
-    end
-      
+    
     desc "Wipe tables then rerun all migrations and seed database"
     task :remigrate, :only => {:primary => true}, :except => { :no_release => true } do
       confirm = Capistrano::CLI.ui.ask "This is a dangerous task. Type Y to continue."
