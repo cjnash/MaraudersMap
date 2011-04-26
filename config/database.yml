@@ -15,11 +15,33 @@ test: &test
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+staging:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: cia_staging
   pool: 5
-  timeout: 5000
+  username: horobec
+  password: oKYyvpUqUSDLS4LUzhct
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: cia_production
+  pool: 5
+  username: horobec
+  password: oKYyvpUqUSDLS4LUzhct
+  socket: /var/run/mysqld/mysqld.sock
+  #adapter: mysql
+  #encoding: utf8
+  #reconnect: false
+  #database: cia_production
+  #pool: 5
+  #username: horobec
+  #password: 2wv8GSjB6NdB
+  #host: 172.18.201.167
 
 cucumber:
   <<: *test

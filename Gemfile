@@ -7,8 +7,6 @@ gem 'cancan'
 gem 'meta_search'
 gem 'fastercsv'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-
 group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
@@ -20,4 +18,8 @@ group :test do
 	gem 'launchy'
 end
 
+gem 'mysql', :group => [:staging, :production]
+gem 'unicorn', :group => [:staging, :production]
+
+gem 'sqlite3-ruby', :require => 'sqlite3', :group => [:development, :test]
 gem 'rspec-rails', '>= 2.0.1', :group => [:development, :test]
