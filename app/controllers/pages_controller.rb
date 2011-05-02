@@ -99,13 +99,12 @@ class PagesController < ApplicationController
   end
   
   def mailsend
-     @pages = Page.find_all_by_next_review_date(Date.today)
-     @pages.each do |page|
+    User.all.each do |editor|
       ContentReviewMailer.review_email(editor).deliver
     end
  
     respond_to do |format|        
-      format.html # index.html.erb
+      format.html { redirect_to(pages_url, :notice => 'Mailer sent.') }
       format.xml  { render :xml => @pages }
     end
   end

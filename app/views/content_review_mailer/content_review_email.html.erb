@@ -4,14 +4,14 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>Time to review one of your web content pages, <%= @user.username %></h1>
+    <h1>Today's content to review</h1>
     <p>
 
 <%= @pages.each do |page| %>
+  <ul>
+    <li><%= link_to page.metadata.content_title.html_safe, page_path(page) %> - CMS Page ID # <%= @page.cms_page_id %></li>
+	</ul>	
 <% end %>
-      
-      
-      
       
     </p>
     <p>Don't forget to set a new review date for your content page once you're done this review, and remember to ask another content specialist to review your page before publishing, and mark that reviewer in Marauder's Map.</p>
