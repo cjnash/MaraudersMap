@@ -1,7 +1,7 @@
 Today's content pages to be reviewed: 
 --------------------------------
 <%= @pages.each do |page| %>
-<%= page.metadata.content_title.html_safe %> - CMS Page ID # <%= @page.cms_page_id %>
+<%= page.metadata.content_title.html_safe %> - CMS Page ID # <%= page.cms_page_id %>
 <% end %>
 
 --------------------------------

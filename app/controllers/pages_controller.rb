@@ -104,7 +104,7 @@ class PagesController < ApplicationController
     end
  
     respond_to do |format|        
-      format.html { redirect_to(pages_url, :notice => 'Mailer sent.') }
+      format.html { redirect_to(dashboards_path, :notice => 'Mailer sent.') }
       format.xml  { render :xml => @pages }
     end
   end
