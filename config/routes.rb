@@ -1,5 +1,6 @@
 MaraudersMap::Application.routes.draw do
   match 'pages/search' => 'pages#show'
+  get 'pages/mailsend'
   resources :pages do  
     resources :notes
   end

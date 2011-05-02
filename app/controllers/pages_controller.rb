@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     params[:status] == 'offline' ? online = false : online = true
     @pages = Page.by_section.where(:online => online).page params[:page]
     @sections = Section.all
-    @profiles = Profile.all    
+    @profiles = Profile.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,11 +22,13 @@ class PagesController < ApplicationController
   def show
    # @page = Page.find(params[:id])
     @user = current_user
+    puts "show page #{params[:cms_page_id]}"
     unless params[:cms_page_id].nil?
-          @page = Page.find_by_cms_page_id(params[:cms_page_id])
-        else
-          @page = Page.find(params[:id])
-        end
+      @page = Page.find_by_cms_page_id(params[:cms_page_id])
+    else
+      @page = Page.find(params[:id])
+        puts @page.to_yaml
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -93,6 +95,18 @@ class PagesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pages_url, :notice => 'The page has vanished.') }
       format.xml  { head :ok }
+    end
+  end
+  
+  def mailsend
+     @pages = Page.find_all_by_next_review_date(Date.today)
+     @pages.each do |page|
+      ContentReviewMailer.review_email(editor).deliver
+    end
+ 
+    respond_to do |format|        
+      format.html # index.html.erb
+      format.xml  { render :xml => @pages }
     end
   end
   
