@@ -1,5 +1,9 @@
-Time to review one of your web content pages, <%= @user.username %>
+Today's content pages to be reviewed: 
 --------------------------------
-You have set one of your AMA website content pages to be reviewed tomorrow: <%= @page %> (with CMS page ID # <%= @page.cms_page_id %>). Please review the live page and log any comments, changes or notes in the page's listing in the Marauders Map content inventory site.
+<%= @pages.each do |page| %>
+<%= page.metadata.content_title.html_safe %> - CMS Page ID # <%= @page.cms_page_id %>
+<% end %>
+
+--------------------------------
 
 Don't forget to set a new review date for your content page once you're done this review, and remember to ask another content specialist to review your page before publishing, and mark that reviewer in Marauder's Map.
