@@ -28,7 +28,7 @@ class PagesController < ApplicationController
     else
       @page = Page.find(params[:id])
         puts @page.to_yaml
-    end
+    end    
 
     respond_to do |format|
       format.html # show.html.erb

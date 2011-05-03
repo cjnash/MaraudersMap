@@ -15,8 +15,8 @@ h2 {
 
 body, p, ol, ul, td {
   font-family: 'Philosopher', arial, serif;
-  font-size:   13px;
-  line-height: 16px;
+  font-size:   14px;
+  line-height: 18px;
   font-color: #fff;
 }
 
@@ -119,7 +119,7 @@ div.field, label, div.actions {
   margin-left: 20px;
   margin-top: 5px;
   padding: 1.5em;
-  width: 18em;
+  width: 19em;
   font-size: 14px;
   font-family: 'Philosopher', arial, serif;
   line-height: 18px;
