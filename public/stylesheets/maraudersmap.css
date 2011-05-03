@@ -94,7 +94,7 @@ div.field, label, div.actions {
 
 #notice {
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 3px;
   margin-left: 10px;
 }
@@ -102,13 +102,17 @@ div.field, label, div.actions {
 #mainbody {
   float: left;
   clear: left;
-  min-height: 700px;
-  max-width: 700px;
+  min-height: 900px;
+  min-width: 600px;
   margin-left: 5px;
 }
 
 #index_list p tr td {
   color: white;
+  float: left;
+  clear: left;
+  min-height: 700px;
+  min-width: 700px;
   font-size: 10px;
 }
 

@@ -21,18 +21,18 @@
 		<td width=150px>
 			<%= pretty_date(page.published_date) %>
 		</td>
-  </tr>
-<% end %>
-</table>
-</div>
+    </tr>
+  <% end %>
+  </table>
+  </div>
 </div>
 
-<div id="sidebar">
-  <%= render :partial => "pages/search" %>
-</div>
+  <div id="sidebar">
+    <%= render :partial => "pages/search" %>
+  </div>
   
   <div id="sidebar">
-  <p>Live page count: <strong><%= Page.live.size %></strong></p>
+  <p>Live page count: <strong><%= Page.live.size %></strong></br></p>
   </div>
   
   <div id="sidebar">
@@ -52,9 +52,9 @@
 	</div>
 	
 	<div id="sidebar">
-  <p>Download the <strong><%= link_to 'report', pages_path(@page, :format => :csv) %></strong>. <i>(Hint: Right click and "save as...")</i></p>
+  <p>Download the <strong><%= link_to 'report', pages_path(@page, :format => :csv) %></strong>. <i>(Hint: Right click and "save as...")</i></br></p>
  	</div>
 
-<div id="footer">
-  <p><%= link_to 'Back to your dashboard', dashboards_path %> | <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %></p>
-</div>
+ <div id="footer">
+   <p><%= link_to 'Back to your dashboard', dashboards_path %> | <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %></p>
+ </div>
