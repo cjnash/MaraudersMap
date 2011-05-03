@@ -55,7 +55,10 @@ http://www.ama.ab.ca/<%= @page.url %></p>
 
 <p>
   Marauder's Map user-assignable details for this page were last updated by <%= @page.updated_by %> on <%= pretty_date(@page.updated_at) %>.</p>
-
+  
+<p>
+  <%= link_to 'Edit user-assignable details', { :id => @page, :action => "edit"} %></p>
+  
 </div>
 
 <div id="notes">
@@ -76,7 +79,6 @@ http://www.ama.ab.ca/<%= @page.url %></p>
 </div>
 
 <div id="footer">
-<%= link_to 'Edit the user-assignable details for this page', edit_page_path(@page) %> |
 <%= link_to 'Go to the list of all pages', pages_path %> |
 <%= link_to 'Back to your dashboard', dashboards_path %>
 </div>
