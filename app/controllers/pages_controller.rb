@@ -98,15 +98,14 @@ class PagesController < ApplicationController
     end
   end
   
-  def mailsend
+  def mailsend    
     User.all.each do |editor|
       ContentReviewMailer.review_email(editor).deliver
     end
- 
-    respond_to do |format|        
+      
+    respond_to do |format|
       format.html { redirect_to(dashboards_path, :notice => 'Mailer sent.') }
-      format.xml  { render :xml => @pages }
+      format.xml  { head :ok }
     end
   end
-  
 end

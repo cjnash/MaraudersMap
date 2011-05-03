@@ -3,9 +3,9 @@ class ContentReviewMailer < ActionMailer::Base
   
   def review_email(editor)
     @pages = editor.pages.find_all_by_next_review_date(Date.parse(Date.today.to_s))
-    unless @pages.empty? 
+      unless @pages.empty? 
         mail(:to => editor.email, 
         :subject => "Today's content pages to be reviewed")
+      end
     end
-  end
 end
