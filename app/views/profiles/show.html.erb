@@ -36,6 +36,7 @@
 
 
 <div id="footer">
-<%= link_to 'Back to your dashboard', dashboards_path %>
-<%= link_to 'Show all users', profiles_path %>
+<%= link_to 'Back to your dashboard', dashboards_path %> | 
+<%= link_to 'Show all users', profiles_path %> | 
+<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
 </div>

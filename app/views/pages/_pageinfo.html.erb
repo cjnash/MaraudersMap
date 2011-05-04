@@ -10,19 +10,24 @@
   </p>
 
 <p>
-Originally created on <%= pretty_date(@page.cms_created_at.utc) %> by <%= @page.metadata.author %>. Last published on <%= pretty_date(@page.published_date) %> by <%= @page.metadata.editor %></p> <br>
+Originally created on <%= pretty_date(@page.cms_created_at.utc) %> by <%= @page.metadata.author %>. <br>
+Last published on <%= pretty_date(@page.published_date) %> by <%= @page.metadata.editor %>.</p> <br>
 
 
 <h2>Additional Info</h2>
 
 <p>
-  <strong>Navigation path:</strong>
-  <%= section_link %> / <%= @page.metadata.nav2 %> / <%= @page.metadata.nav3 %> / <%= @page.metadata.content_title %>
+  <strong>Section (Nav 1): </strong>
+  <%= section_link %>
 </p>
 
 <p>
-  <strong>URL:</strong>
-http://www.ama.ab.ca/<%= @page.url %></p>
+  <strong>Navigation tree path: </strong>
+ <%= @page.metadata.nav2 %> / <%= @page.metadata.nav3 %> / <%= @page.metadata.content_title %></p>
+ 
+<p>
+  <strong>URL: </strong>
+www.ama.ab.ca/<%= @page.url %></p>
 
 <p>
   <strong>Deeplink(s):</strong>
@@ -57,7 +62,7 @@ http://www.ama.ab.ca/<%= @page.url %></p>
   Marauder's Map user-assignable details for this page were last updated by <%= @page.updated_by %> on <%= pretty_date(@page.updated_at) %>.</p>
   
 <p>
-  <%= link_to 'Edit user-assignable details', { :id => @page, :action => "edit"} %></p>
+  <%= button_to 'Edit user-assignable details', edit_page_path(@page), :method => :get %></p>
   
 </div>
 
@@ -80,8 +85,6 @@ http://www.ama.ab.ca/<%= @page.url %></p>
 
 <div id="footer">
 <%= link_to 'Go to the list of all pages', pages_path %> |
-<%= link_to 'Back to your dashboard', dashboards_path %>
-</div>
-<div id="login">
-	<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
+<%= link_to 'Back to your dashboard', dashboards_path %> | 
+<%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
 </div>

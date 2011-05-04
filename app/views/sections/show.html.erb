@@ -45,5 +45,6 @@
 </div>
 
 <div id="footer">
-  <p><%= link_to 'Back to your dashboard', dashboards_path %></p>
+  <p><%= link_to 'Back to your dashboard', dashboards_path %> | 
+  <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
 </div>
