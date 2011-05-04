@@ -12,7 +12,7 @@
   <% end %>
   
   <div class="field">
-    <%= f.label "Available to" %>
+    <%= f.label "Page available to" %>
     <%= f.select :user_state, options_for_select(["Public", "Logged In User", "Member Only"]) %>
   </div>
   
@@ -25,7 +25,7 @@
   
   <div class="field">
     <%= f.label :reviewed_by %>
-    <%= f.select :reviewed_by, options_for_select(["Amanda", "Christopher", "Darrell", "Dwain", "Esci", "Laura", "Jason", "Johnn", "Krista", "Sarah vT", "Other"]) %> on 
+    <%= f.select :reviewed_by, options_for_select(["Aly", "Amanda", "Christopher", "Chris R", "Dwain", "Esci", "Laura", "Liam", "Jason", "Johnn", "Krista", "Sarah vT", "Other"]) %> on 
     <%= f.date_select :reviewed_date %>
   </div>
   

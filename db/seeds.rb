@@ -19,6 +19,7 @@ users = [
   {:username => 'aly.halisky', :password => '3cH2qYi3LaaNo1dX', :email => 'alyson.halisky@ama.ab.ca'},
   {:username => 'amanda.doucette', :password => 'hM0vo4rJk8XVu4Hd', :email => 'amanda.doucette@ama.ab.ca'},
   {:username => 'christopher.nash', :password => 'ZWXKVsm2M654x80R', :email => 'christopher.nash@ama.ab.ca'},
+  {:username => 'chris.rechner', :password => 'I3YUz&HnUM4:wjJ', :email => 'chris.rechner@ama.ab.ca'},
   {:username => 'disabled.brad.grier', :password => 'C4iU3yacLd4a7af1', :email => 'brad.grier@ama.ab.ca'},
   {:username => 'disabled.darrell.winwood', :password => '1B624Mh46jw1R58N', :email => 'darrell.winwood@ama.ab.ca'},
   {:username => 'disabled.ruthann.raycroft', :password => '6pqG3Sg824E8590U', :email => 'ruthann.raycroft@ama.ab.ca'},
