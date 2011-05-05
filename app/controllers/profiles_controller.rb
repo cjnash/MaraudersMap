@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
     @sections = Section.all
     @profiles = Profile.all
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @profiles }
     end
   end
