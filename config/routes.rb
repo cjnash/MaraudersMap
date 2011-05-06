@@ -17,6 +17,8 @@ MaraudersMap::Application.routes.draw do
 
   root :to => "dashboards#index"
   
+  match "/isolemnlyswearthatiamuptonogood", :to => redirect("http://www.surfnetkids.com/games/bus_driving.htm")
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
