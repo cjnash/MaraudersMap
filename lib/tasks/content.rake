@@ -175,7 +175,7 @@ namespace :content do
   end
   
   task :copy => :environment do 
-    system("cp -fR /home/deploy/public_html/amaabca/current/content/* #{Rails.root.join('current','content')}")
+    system("cp -fR /home/deploy/public_html/amaabca/current/content/* #{Rails.root.join('content')}")
   end
   
   namespace :update do

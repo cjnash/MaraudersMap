@@ -84,7 +84,8 @@ www.ama.ab.ca/<%= @page.url %></p>
 </div>
 
 <div id="footer">
-<%= link_to 'Go to the list of all pages', pages_path %> |
+<%= link_to 'Go to the list of all pages', pages_path %> | 
 <%= link_to 'Back to your dashboard', dashboards_path %> | 
+<%= section_link %> | 
 <%= link_to 'SIGN OUT', destroy_user_session_path if current_user %>
 </div>
