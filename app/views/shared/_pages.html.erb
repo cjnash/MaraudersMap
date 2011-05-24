@@ -2,5 +2,5 @@
 	The website's <%= limit %> most recently published pages
 </h3>
 <% Page.recent.limit(limit).each do |page| %>
-	 <%= link_to page.metadata.content_title.html_safe, page %> (<%= pretty_date(page.published_date) %>)<br/>
+	 <%= link_to page.metadata.content_title.html_safe, page %> (<%= pretty_date(page.updated_at) %>)<br/>
 <% end %>

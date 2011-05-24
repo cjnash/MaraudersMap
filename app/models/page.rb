@@ -34,7 +34,7 @@ class Page < ActiveRecord::Base
   }
   
   scope :recent, lambda {
-    order('published_date desc')
+    order('updated_at desc')
   }
   
 #  validates :headline, :presence => true
